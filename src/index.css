@@ -394,6 +394,70 @@
     }
   }
 
+  @keyframes breathing-glow {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+      filter: blur(40px);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1);
+      filter: blur(60px);
+    }
+  }
+
+  @keyframes floating-breath {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    33% {
+      transform: translateY(-15px) translateX(8px) scale(1.05);
+    }
+    66% {
+      transform: translateY(10px) translateX(-8px) scale(0.95);
+    }
+  }
+
+  /* Breathing glow orbs */
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .glow-orb-1 {
+    top: 15%;
+    left: 8%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.4), hsl(var(--accent) / 0.2), transparent);
+    animation: breathing-glow 6s ease-in-out infinite, floating-breath 12s ease-in-out infinite;
+  }
+
+  .glow-orb-2 {
+    top: 50%;
+    right: 12%;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, hsl(var(--accent) / 0.35), hsl(var(--primary) / 0.15), transparent);
+    animation: breathing-glow 8s ease-in-out infinite reverse, floating-breath 15s ease-in-out infinite reverse;
+  }
+
+  .glow-orb-3 {
+    bottom: 25%;
+    left: 45%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, hsl(var(--secondary) / 0.3), hsl(var(--accent) / 0.1), transparent);
+    animation: breathing-glow 10s ease-in-out infinite, floating-breath 18s ease-in-out infinite;
+  }
+
+  .animate-breathing-glow {
+    animation: breathing-glow 4s ease-in-out infinite;
+  }
+
   /* Responsive spacing */
   .space-section {
     @apply space-y-8 md:space-y-12 lg:space-y-16;

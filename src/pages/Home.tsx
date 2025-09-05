@@ -1,6 +1,5 @@
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profileImage from "@/assets/shaurya-profile.jpg";
 
 const Home = () => {
   const skillTags = [
@@ -115,8 +114,8 @@ const Home = () => {
               <div className="absolute -inset-1 bg-gradient-primary rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative">
                 <img
-                  src={profileImage}
-                  alt="Shaurya Parshad - Software Developer"
+                  src="/lovable-uploads/56bdd1bf-af43-4757-a6d2-bab489a51b76.png"
+                  alt="Shaurya Parshad - Software Developer" 
                   className="w-80 h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] object-cover object-top rounded-2xl shadow-2xl"
                 />
               </div>

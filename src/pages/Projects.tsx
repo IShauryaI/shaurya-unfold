@@ -121,19 +121,6 @@ const Projects = () => {
                           </a>
                         </Button>
                       )}
-                      {project.links.demo && (
-                        <Button variant="ghost" size="sm" className="h-8 px-2" asChild>
-                          <a
-                            href={project.links.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center space-x-1"
-                          >
-                            <ExternalLink className="h-3 w-3" />
-                            <span className="text-xs">Demo</span>
-                          </a>
-                        </Button>
-                      )}
                     </div>
                     <Button 
                       variant="ghost" 

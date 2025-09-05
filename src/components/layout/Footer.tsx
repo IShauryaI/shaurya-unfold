@@ -73,7 +73,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="space-y-4 md:text-right">
               <div className="text-sm text-muted-foreground">
-                <p>&copy; 2024 Shaurya Parshad</p>
+                <p>&copy; 2025 Shaurya Parshad</p>
                 <p>Built with React & Tailwind CSS</p>
               </div>
             </div>

@@ -1,12 +1,16 @@
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import profileImage from "@/assets/shaurya-profile.jpg";
 
 const Home = () => {
   const skillTags = [
     "UI/UX", "React", "HTML/CSS", "Tailwind", "Flask/FastAPI", "Node/Express"
   ];
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.querySelector(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
     <section className="section-padding bg-gradient-subtle min-h-[calc(100vh-5rem)]">
@@ -53,16 +57,18 @@ const Home = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="btn-primary">
-                <Link to="/projects">
-                  View Projects
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+              <Button 
+                onClick={() => scrollToSection('#projects')}
+                className="btn-primary"
+              >
+                View Projects
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button asChild className="btn-secondary">
-                <Link to="/contact">
-                  Contact Me
-                </Link>
+              <Button 
+                onClick={() => scrollToSection('#contact')}
+                className="btn-secondary"
+              >
+                Contact Me
               </Button>
               <Button variant="outline" className="group">
                 <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />

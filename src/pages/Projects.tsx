@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ExternalLink, Github, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { projects, type Project } from "@/data/projects";
-import { Link } from "react-router-dom";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState<string>("All");
@@ -136,10 +135,16 @@ const Projects = () => {
                         </Button>
                       )}
                     </div>
-                    <Button variant="ghost" size="sm" asChild className="text-xs h-8">
-                      <Link to={`/projects/${project.id}`}>
-                        Learn More →
-                      </Link>
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      className="text-xs h-8"
+                      onClick={() => {
+                        const element = document.querySelector('#contact');
+                        element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }}
+                    >
+                      Contact Me →
                     </Button>
                   </div>
                 </div>
@@ -153,10 +158,14 @@ const Projects = () => {
               <p className="text-muted-foreground">
                 Interested in collaborating on a project?
               </p>
-              <Button asChild className="btn-primary">
-                <Link to="/contact">
-                  Get In Touch
-                </Link>
+              <Button 
+                className="btn-primary"
+                onClick={() => {
+                  const element = document.querySelector('#contact');
+                  element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                Get In Touch
               </Button>
             </div>
           </div>

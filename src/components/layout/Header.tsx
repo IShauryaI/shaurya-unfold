@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/useTheme";
@@ -19,13 +18,19 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Skills", path: "/skills" },
-    { name: "Projects", path: "/projects" },
-    { name: "Experience", path: "/experience" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
+    { name: "Contact", href: "#contact" },
   ];
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setIsMenuOpen(false);
+  };
 
   return (
     <header
@@ -38,32 +43,23 @@ const Header = () => {
       <div className="container-fluid">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <NavLink 
-            to="/" 
+          <button 
+            onClick={() => scrollToSection('#home')}
             className="text-xl md:text-2xl font-bold text-gradient hover:scale-105 transition-transform duration-300"
           >
             SP
-          </NavLink>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <NavLink
+              <button
                 key={item.name}
-                to={item.path}
-                end={item.path === "/"}
-                className={({ isActive }) =>
-                  `relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-accent ${
-                    isActive 
-                      ? "text-accent" 
-                      : "text-muted-foreground"
-                  } after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:left-0 after:bottom-0 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-                    isActive ? "after:scale-x-100" : ""
-                  }`
-                }
+                onClick={() => scrollToSection(item.href)}
+                className="relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-accent text-muted-foreground after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:left-0 after:bottom-0 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 {item.name}
-              </NavLink>
+              </button>
             ))}
           </nav>
 
@@ -105,21 +101,13 @@ const Header = () => {
           <nav className="md:hidden pb-6 animate-slide-down">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <NavLink
+                <button
                   key={item.name}
-                  to={item.path}
-                  end={item.path === "/"}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `px-3 py-2 text-sm font-medium transition-colors duration-300 ${
-                      isActive 
-                        ? "text-accent bg-accent/10 rounded-lg" 
-                        : "text-muted-foreground hover:text-accent hover:bg-accent/5 rounded-lg"
-                    }`
-                  }
+                  onClick={() => scrollToSection(item.href)}
+                  className="px-3 py-2 text-sm font-medium transition-colors duration-300 text-left text-muted-foreground hover:text-accent hover:bg-accent/5 rounded-lg"
                 >
                   {item.name}
-                </NavLink>
+                </button>
               ))}
             </div>
           </nav>

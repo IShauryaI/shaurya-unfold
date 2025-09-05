@@ -44,14 +44,27 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => scrollToSection('#home')}
             className="text-xl md:text-2xl font-bold text-gradient hover:scale-105 transition-transform duration-300"
           >
             SP
           </button>
 
-          {/* Theme Toggle */}
-          <div className="flex items-center">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.href)}
+                className="relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-accent text-muted-foreground after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-accent after:left-0 after:bottom-0 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+              >
+                {item.name}
+              </button>
+            ))}
+          </nav>
+
+          {/* Theme Toggle & Mobile Menu */}
+          <div className="flex items-center space-x-4">
             <Button
               variant="ghost"
               size="sm"
@@ -65,9 +78,40 @@ const Header = () => {
                 <Sun className="h-4 w-4" />
               )}
             </Button>
+
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="md:hidden w-9 h-9 p-0"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </Button>
           </div>
         </div>
 
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <nav className="md:hidden pb-6 animate-slide-down">
+            <div className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="px-3 py-2 text-sm font-medium transition-colors duration-300 text-left text-muted-foreground hover:text-accent hover:bg-accent/5 rounded-lg"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          </nav>
+        )}
       </div>
     </header>
   );

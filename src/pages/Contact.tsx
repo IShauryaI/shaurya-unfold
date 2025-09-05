@@ -31,12 +31,6 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "parshad@uwindsor.ca",
-      link: "mailto:parshad@uwindsor.ca"
-    },
-    {
-      icon: Mail,
-      label: "Email",
       value: "shauryapd@gmail.com",
       link: "mailto:shauryapd@gmail.com"
     }
@@ -195,7 +189,7 @@ const Contact = () => {
                     </p>
                   </div>
                   <Button asChild className="btn-secondary">
-                    <a href="mailto:parshad@uwindsor.ca">
+                    <a href="mailto:shauryapd@gmail.com">
                       <Mail className="mr-2 h-4 w-4" />
                       Send Email
                     </a>

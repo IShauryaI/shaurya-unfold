@@ -15,7 +15,7 @@ const Footer = () => {
     },
     {
       name: "Email",
-      url: "mailto:parshad@uwindsor.ca",
+      url: "mailto:shauryapd@gmail.com",
       icon: Mail,
     },
   ];
@@ -32,15 +32,6 @@ const Footer = () => {
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-4 w-4" />
                   <span>Windsor, Ontario</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Mail className="h-4 w-4" />
-                  <a 
-                    href="mailto:parshad@uwindsor.ca"
-                    className="hover:text-accent transition-colors"
-                  >
-                    parshad@uwindsor.ca
-                  </a>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4" />

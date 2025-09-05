@@ -99,7 +99,7 @@ const Home = () => {
               </Button>
               <Button variant="ghost" size="sm" asChild className="w-10 h-10 p-0">
                 <a
-                  href="mailto:parshad@uwindsor.ca"
+                  href="mailto:shauryapd@gmail.com"
                   aria-label="Email"
                 >
                   <Mail className="h-5 w-5" />

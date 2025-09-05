@@ -24,9 +24,9 @@ const Home = () => {
             </div>
 
             <div className="space-y-6">
-              <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl">Emerging software developer with a strong foundation across Python, web development, AI/ML, computer vision, data engineering, and systems programming. 
+              <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl">Emerging software developer with a strong foundation across Python, web development, AI/ML, computer vision, data engineering, and systems programming.  
 
-I translate business needs into working software and have delivered web/desktop apps, REST APIs, and web-crawling/search features through Agile sprints.
+I translate business needs into working software and have delivered web/desktop apps, REST APIs, and web-crawling/search features.
             </p>
 
               

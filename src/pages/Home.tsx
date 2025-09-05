@@ -9,7 +9,7 @@ const Home = () => {
       block: 'start'
     });
   };
-  return <section className="section-padding bg-gradient-subtle">
+  return <section className="section-padding bg-gradient-subtle aurora-hero">
       <div className="container-fluid">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}

@@ -42,7 +42,7 @@ const About = () => {
             <div className="lg:col-span-1 flex justify-center animate-scale-in">
               <div className="relative">
                 <img
-                  src="/lovable-uploads/56bdd1bf-af43-4757-a6d2-bab489a51b76.png"
+                  src="/lovable-uploads/3a2e6edf-acb8-4e31-bec1-3e16097eb3a3.png"
                   alt="Shaurya Parshad"
                   className="w-64 h-64 md:w-72 md:h-72 object-cover object-top rounded-2xl shadow-lg"
                 />

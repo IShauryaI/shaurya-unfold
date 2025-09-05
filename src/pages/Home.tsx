@@ -9,7 +9,7 @@ const Home = () => {
       block: 'start'
     });
   };
-  return <section className="section-padding bg-gradient-subtle min-h-[calc(100vh-5rem)]">
+  return <section className="section-padding bg-gradient-subtle">
       <div className="container-fluid">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}

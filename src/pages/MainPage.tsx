@@ -4,12 +4,14 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Experience from "./Experience";
 import Contact from "./Contact";
+import CodeRain from "@/components/animations/CodeRain";
 
 const MainPage = () => {
   return (
     <div className="relative">
       {/* Background Animation */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <CodeRain opacity={0.15} speed={0.8} />
         <div className="floating-orbs">
           <div className="orb orb-1"></div>
           <div className="orb orb-2"></div>

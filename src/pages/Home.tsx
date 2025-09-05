@@ -56,9 +56,11 @@ const Home = () => {
               <Button onClick={() => scrollToSection('#contact')} className="btn-secondary">
                 Contact Me
               </Button>
-              <Button variant="outline" className="group">
-                <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                Resume
+              <Button variant="outline" className="group" asChild>
+                <a href="https://drive.google.com/uc?export=download&id=1s9_RFndZIar2aHot2mLHnTjEic5LpYEf" target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  Resume
+                </a>
               </Button>
             </div>
 

@@ -25,8 +25,7 @@ export const projects: Project[] = [
     category: "Data & ML",
     featured: true,
     links: {
-      github: "# To be added",
-      demo: "# To be added"
+      github: "https://github.com/IShauryaI"
     },
     status: "Completed"
   },
@@ -39,8 +38,7 @@ export const projects: Project[] = [
     category: "Web Development",
     featured: true,
     links: {
-      github: "# To be added",
-      demo: "# To be added"
+      github: "https://github.com/IShauryaI"
     },
     status: "Completed"
   },
@@ -53,8 +51,7 @@ export const projects: Project[] = [
     category: "Web Development",
     featured: true,
     links: {
-      github: "# To be added",
-      demo: "# To be added"
+      github: "https://github.com/IShauryaI"
     },
     status: "Completed"
   },
@@ -67,7 +64,7 @@ export const projects: Project[] = [
     category: "Systems",
     featured: true,
     links: {
-      github: "# To be added"
+      github: "https://github.com/IShauryaI"
     },
     status: "Completed"
   }

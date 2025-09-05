@@ -1,6 +1,7 @@
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profileImage from "@/assets/shaurya-profile.jpg";
+import profileImage from "@/assets/shaurya-new-profile.jpg";
+import bannerImage from "@/assets/banner-background.jpg";
 
 const Home = () => {
   const skillTags = [
@@ -13,8 +14,18 @@ const Home = () => {
   };
 
   return (
-    <section className="section-padding bg-gradient-subtle min-h-[calc(100vh-5rem)]">
-      <div className="container-fluid">
+    <section className="section-padding relative min-h-[calc(100vh-5rem)] overflow-hidden">
+      {/* Banner Background */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={bannerImage}
+          alt="Keep Evolving. Keep Building."
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90"></div>
+      </div>
+      
+      <div className="container-fluid relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="space-y-8 animate-fade-up">

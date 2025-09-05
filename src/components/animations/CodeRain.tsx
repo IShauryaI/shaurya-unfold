@@ -75,7 +75,6 @@ const CodeRain = ({ density = 50, speed = 1, opacity = 0.1 }: CodeRainProps) => 
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity }}
     />
   );
 };

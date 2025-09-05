@@ -17,25 +17,11 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "gadgetgaze",
-    title: "GadgetGaze",
-    description: "Smartphone Recommendation Website with intelligent search and ranking capabilities",
-    longDescription: "Smart crawl/parsing, search, and ranking system for smartphones. Features word completion, frequency analysis, and inverted indexing for fast retrieval. Built with Flask frontend and Spring Boot backend architecture.",
-    technologies: ["Flask", "Spring Boot", "Python", "Java", "Search Algorithms", "Web Crawling", "Inverted Indexing"],
-    category: "Web Development",
-    featured: true,
-    links: {
-      github: "# To be added",
-      demo: "# To be added"
-    },
-    status: "Completed"
-  },
-  {
-    id: "microloan-fraud",
-    title: "Microloan Fraud Detection",
-    description: "Data Warehouse & Analytics platform for fraud detection and risk assessment",
-    longDescription: "Star-schema design with Airflow ETL pipeline implementing SCD-2 and CDC. Features model experimentation for imbalanced classification problems. Delivers analytics-ready warehouse and comprehensive fraud-risk insights.",
-    technologies: ["Apache Airflow", "Python", "SQL", "Data Warehousing", "ETL", "Machine Learning", "SCD-2", "CDC"],
+    id: "stereo-3d-reconstruction",
+    title: "Stereo Images to 3D Reconstruction",
+    description: "Interactive 3D Depth Representation Tool",
+    longDescription: "Captured a stereo chessboard pair and calibrated both cameras to recover intrinsics for 3D mapping. Computed dense disparities with StereoSGBM to reduce noise and fill low-texture regions. Reprojected disparity to real-world coordinates, built an interactive 3D point-cloud viewer colored by left image. Validated mapping by reconstructing the right image from left+disparity and visually comparing against ground truth, documented trade-offs between uncalibrated and calibrated rectification.",
+    technologies: ["PyTorch", "OpenCV", "Plotly", "Python", "3D Reconstruction", "Computer Vision", "Stereo Vision", "Point Cloud"],
     category: "Data & ML",
     featured: true,
     links: {
@@ -45,12 +31,12 @@ export const projects: Project[] = [
     status: "Completed"
   },
   {
-    id: "cnn-visual-recognition",
-    title: "CNNs for Visual Object Recognition",
-    description: "Deep learning research project comparing classical and modern computer vision approaches",
-    longDescription: "Comprehensive survey and implementation comparing classical features (SIFT/HOG + SVM) to deep CNNs (VGG/ResNet/MobileNet). Includes training pipeline, data augmentation, and analysis of accuracy vs. latency trade-offs.",
-    technologies: ["PyTorch", "OpenCV", "Python", "CNN", "Computer Vision", "SIFT", "HOG", "ResNet", "VGG", "MobileNet"],
-    category: "Data & ML",
+    id: "wellbeing-healthcare",
+    title: "Wellbeing - Healthcare Symptom Analysis Platform",
+    description: "Healthcare platform delivering personalized symptom analysis and medication suggestions",
+    longDescription: "Led a 4-member agile team, managed sprint planning, delegated tasks and led code reviews. Architected and deployed a platform delivering personalized symptom analysis and medication suggestions. Developed a review module processing medicine reviews to support pharmaceutical analytics. Enhanced UI/UX to improve accessibility and engagement for patients and doctors.",
+    technologies: ["Django", "Python", "JavaScript", "HTML", "CSS", "Bootstrap", "Healthcare Analytics", "Team Leadership"],
+    category: "Web Development",
     featured: true,
     links: {
       github: "# To be added",
@@ -59,29 +45,16 @@ export const projects: Project[] = [
     status: "Completed"
   },
   {
-    id: "acc-website",
-    title: "ACC Website",
-    description: "Modern, responsive website implementation with clean architecture",
-    longDescription: "Built with Flask framework featuring clean routing, template system, and componentized UI. Focuses on responsive design, performance optimization, and maintainable code structure.",
-    technologies: ["Flask", "HTML/CSS", "JavaScript", "Responsive Design", "Template Engine"],
+    id: "daily-delivery",
+    title: "Daily Delivery - Grocery Shopping Application",
+    description: "Django-based delivery management system with automated order tracking",
+    longDescription: "Directed project planning: defined scope, set milestones, and managed stakeholder expectations with weekly status reports. Coached and onboarded three junior developers through pair-programming sessions and technical workshops, improving delivery speed and code quality. Designed and implemented a Django/Python/MySQL delivery management system automating order placement, tracking, and staff onboarding. Developed interactive dashboards integrating customer data and reporting to support data-driven operational decisions.",
+    technologies: ["Python", "Django", "Tkinter", "MySQL", "HTML", "CSS", "Bootstrap", "JavaScript", "Project Management"],
     category: "Web Development",
-    featured: false,
+    featured: true,
     links: {
       github: "# To be added",
       demo: "# To be added"
-    },
-    status: "Completed"
-  },
-  {
-    id: "mbash25",
-    title: "mbash25 - Custom Shell",
-    description: "Unix-style shell implementation with advanced process control",
-    longDescription: "Custom shell with special operators, robust process control, and I/O behavior. Features comprehensive parsing, signal handling, and Unix-style command execution with focus on reliability and performance.",
-    technologies: ["C/C++", "Unix/Linux", "System Calls", "Process Control", "Signal Handling", "Parsing"],
-    category: "Systems",
-    featured: false,
-    links: {
-      github: "# To be added"
     },
     status: "Completed"
   },
@@ -92,7 +65,7 @@ export const projects: Project[] = [
     longDescription: "Client–server architecture using sockets and concurrency for distributed file operations. Implements fault-tolerant operations across multiple nodes with focus on data consistency and system reliability.",
     technologies: ["C/C++", "Sockets", "Multi-threading", "Distributed Systems", "Client-Server Architecture", "Fault Tolerance"],
     category: "Systems",
-    featured: false,
+    featured: true,
     links: {
       github: "# To be added"
     },

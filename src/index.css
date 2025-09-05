@@ -342,7 +342,6 @@
   .aurora-background {
     position: relative;
     overflow: hidden;
-    isolation: isolate;
   }
 
   .aurora-background::before,
@@ -353,8 +352,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 0;
-    pointer-events: none;
+    z-index: -1;
     opacity: 0.15;
     background: linear-gradient(
       45deg,
@@ -405,7 +403,6 @@
   .aurora-hero {
     position: relative;
     overflow: hidden;
-    isolation: isolate;
   }
 
   .aurora-hero::before,
@@ -416,8 +413,7 @@
     left: -50%;
     right: -50%;
     bottom: -50%;
-    z-index: 0;
-    pointer-events: none;
+    z-index: -1;
     opacity: 0.25;
     background: radial-gradient(
       ellipse at center,

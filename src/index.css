@@ -424,7 +424,8 @@
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
+    mix-blend-mode: screen;
   }
 
   .glow-orb-1 {

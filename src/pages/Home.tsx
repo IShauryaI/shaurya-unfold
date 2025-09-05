@@ -117,7 +117,7 @@ const Home = () => {
                 <img
                   src={profileImage}
                   alt="Shaurya Parshad - Software Developer"
-                  className="w-80 h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] object-cover rounded-2xl shadow-2xl"
+                  className="w-80 h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] object-cover object-top rounded-2xl shadow-2xl"
                 />
               </div>
             </div>

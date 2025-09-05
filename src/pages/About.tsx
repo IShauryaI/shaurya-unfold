@@ -45,7 +45,7 @@ const About = () => {
                 <img
                   src={profileImage}
                   alt="Shaurya Parshad"
-                  className="w-64 h-64 md:w-72 md:h-72 object-cover rounded-2xl shadow-lg"
+                  className="w-64 h-64 md:w-72 md:h-72 object-cover object-top rounded-2xl shadow-lg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
               </div>

@@ -1,17 +1,7 @@
-import { useLocation, Link } from "react-router-dom";
-import { useEffect } from "react";
-import { Home, ArrowLeft } from "lucide-react";
+import { Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
 
   return (
     <section className="section-padding min-h-[calc(100vh-10rem)]">
@@ -26,25 +16,39 @@ const NotFound = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="btn-primary">
-              <Link to="/">
-                <Home className="mr-2 h-4 w-4" />
-                Back to Home
-              </Link>
+            <Button 
+              className="btn-primary"
+              onClick={() => {
+                const el = document.querySelector('#home');
+                el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              <Home className="mr-2 h-4 w-4" />
+              Back to Home
             </Button>
-            <Button asChild variant="outline">
-              <Link to="/projects">
-                View Projects
-              </Link>
+            <Button 
+              variant="outline"
+              onClick={() => {
+                const el = document.querySelector('#projects');
+                el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              View Projects
             </Button>
           </div>
 
           <div className="pt-8">
             <p className="text-sm text-muted-foreground">
-              If you believe this is an error, please{" "}
-              <Link to="/contact" className="text-accent hover:underline">
+              If you believe this is an error, please{' '}
+              <button
+                onClick={() => {
+                  const el = document.querySelector('#contact');
+                  el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                className="text-accent hover:underline"
+              >
                 contact me
-              </Link>
+              </button>
               .
             </p>
           </div>

@@ -42,6 +42,15 @@ const Footer = () => {
                     parshad@uwindsor.ca
                   </a>
                 </div>
+                <div className="flex items-center space-x-2">
+                  <Mail className="h-4 w-4" />
+                  <a 
+                    href="mailto:shauryapd@gmail.com"
+                    className="hover:text-accent transition-colors"
+                  >
+                    shauryapd@gmail.com
+                  </a>
+                </div>
               </div>
             </div>
 

@@ -27,7 +27,8 @@ const CodeRain = ({ density = 50, speed = 1, opacity = 0.4 }: CodeRainProps) => 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Characters to use in the rain
+    // Ensure a clean canvas on init/theme change
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789{}[]()<>/\\|=+-*&^%$#@!?';
     const fontSize = 14;
     const columns = Math.floor(canvas.width / fontSize);
@@ -41,10 +42,10 @@ const CodeRain = ({ density = 50, speed = 1, opacity = 0.4 }: CodeRainProps) => 
     }
 
     const draw = () => {
-      // Theme-based background clearing
-      const bgColor = theme === 'dark' 
-        ? 'rgba(15, 23, 42, 0.1)' // Dark slate background
-        : 'rgba(248, 250, 252, 0.05)'; // Light slate background
+      // Theme-based background clearing (avoid any white glow in dark mode)
+      const bgColor = theme === 'dark'
+        ? 'rgba(0, 0, 0, 0.08)' // subtle black for trails
+        : 'rgba(255, 255, 255, 0.06)'; // subtle white for trails
       ctx.fillStyle = bgColor;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -86,7 +87,8 @@ const CodeRain = ({ density = 50, speed = 1, opacity = 0.4 }: CodeRainProps) => 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
+      className="fixed inset-0 pointer-events-none z-0 bg-transparent"
+      style={{ backgroundColor: 'transparent' }}
     />
   );
 };

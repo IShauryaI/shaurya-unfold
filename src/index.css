@@ -266,9 +266,8 @@
     @apply cursor-default;
   }
 
-  /* Project Card */
   .project-card {
-    @apply group relative;
+    @apply relative;
     @apply bg-card border border-border rounded-xl p-6;
     @apply shadow-md hover:shadow-xl;
     @apply transition-all duration-300;

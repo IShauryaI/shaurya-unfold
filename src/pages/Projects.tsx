@@ -63,7 +63,7 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="project-card animate-scale-in"
+                className="group project-card animate-scale-in"
                 style={{ animationDelay: `${300 + (index * 100)}ms` }}
               >
                 <div className="relative z-10 space-y-4">

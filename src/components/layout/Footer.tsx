@@ -46,9 +46,9 @@ const Footer = () => {
             </div>
 
             {/* Social Links */}
-            <div className="space-y-4">
+            <div className="space-y-4 text-center">
               <h3 className="text-lg font-semibold">Connect</h3>
-              <div className="flex space-x-4">
+              <div className="flex justify-center space-x-4">
                 {socialLinks.map((link) => (
                   <Button
                     key={link.name}

@@ -43,16 +43,17 @@ const CodeRain = ({ density = 50, speed = 1, opacity = 0.4 }: CodeRainProps) => 
     const draw = () => {
       // Theme-based background clearing
       const bgColor = theme === 'dark' 
-        ? `rgba(0, 0, 0, ${0.05 / opacity})` 
-        : `rgba(255, 255, 255, ${0.03 / opacity})`;
+        ? 'rgba(15, 23, 42, 0.1)' // Dark slate background
+        : 'rgba(248, 250, 252, 0.05)'; // Light slate background
       ctx.fillStyle = bgColor;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Theme-based character color
+      // Theme-based character color - using specific RGB values
       const charColor = theme === 'dark' 
-        ? `rgba(34, 197, 94, ${opacity})` // Green for dark mode
-        : `rgba(59, 130, 246, ${opacity * 0.7})`; // Blue for light mode
+        ? '#22c55e' // Solid green for dark mode
+        : '#3b82f6'; // Solid blue for light mode
       ctx.fillStyle = charColor;
+      ctx.globalAlpha = opacity;
       ctx.font = `${fontSize}px monospace`;
 
       // Draw characters
@@ -69,6 +70,9 @@ const CodeRain = ({ density = 50, speed = 1, opacity = 0.4 }: CodeRainProps) => 
         }
         drops[i] += speed;
       }
+      
+      // Reset alpha
+      ctx.globalAlpha = 1;
     };
 
     const interval = setInterval(draw, 50);

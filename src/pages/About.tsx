@@ -1,31 +1,23 @@
 import { Code2, Palette, Users, Zap } from "lucide-react";
-
 const About = () => {
-  const focusAreas = [
-    {
-      icon: Palette,
-      title: "UI/UX Design Thinking",
-      description: "Creating user-centered interfaces with accessibility and usability at the forefront"
-    },
-    {
-      icon: Code2,
-      title: "Frontend Engineering",
-      description: "Building responsive, performant web applications with modern frameworks and tools"
-    },
-    {
-      icon: Users,
-      title: "Collaborative Development", 
-      description: "Working effectively in Agile teams to deliver software solutions that meet business needs"
-    },
-    {
-      icon: Zap,
-      title: "Modern Responsive Layouts",
-      description: "Crafting adaptive designs that work seamlessly across all devices and platforms"
-    }
-  ];
-
-  return (
-    <section className="section-padding">
+  const focusAreas = [{
+    icon: Palette,
+    title: "UI/UX Design Thinking",
+    description: "Creating user-centered interfaces with accessibility and usability at the forefront"
+  }, {
+    icon: Code2,
+    title: "Frontend Engineering",
+    description: "Building responsive, performant web applications with modern frameworks and tools"
+  }, {
+    icon: Users,
+    title: "Collaborative Development",
+    description: "Working effectively in Agile teams to deliver software solutions that meet business needs"
+  }, {
+    icon: Zap,
+    title: "Modern Responsive Layouts",
+    description: "Crafting adaptive designs that work seamlessly across all devices and platforms"
+  }];
+  return <section className="section-padding">
       <div className="container-fluid">
         <div className="max-w-4xl mx-auto space-section">
           {/* Header */}
@@ -41,11 +33,7 @@ const About = () => {
             {/* Profile Image */}
             <div className="lg:col-span-1 flex justify-center animate-scale-in">
               <div className="relative">
-                <img
-                  src="/lovable-uploads/3a2e6edf-acb8-4e31-bec1-3e16097eb3a3.png"
-                  alt="Shaurya Parshad"
-                  className="w-64 h-64 md:w-72 md:h-72 object-cover object-top rounded-2xl shadow-lg"
-                />
+                <img src="/lovable-uploads/3a2e6edf-acb8-4e31-bec1-3e16097eb3a3.png" alt="Shaurya Parshad" className="w-64 h-64 md:w-72 md:h-72 object-cover object-top rounded-2xl shadow-lg" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
               </div>
             </div>
@@ -79,12 +67,9 @@ const About = () => {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">Currently Focusing On</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {focusAreas.map((area, index) => (
-                    <div 
-                      key={area.title}
-                      className="card-flat group hover:border-accent/50 animate-fade-up"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
+                  {focusAreas.map((area, index) => <div key={area.title} className="card-flat group hover:border-accent/50 animate-fade-up" style={{
+                  animationDelay: `${index * 100}ms`
+                }}>
                       <div className="flex items-start space-x-3">
                         <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
                           <area.icon className="h-5 w-5 text-accent" />
@@ -96,8 +81,7 @@ const About = () => {
                           </p>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
 
@@ -111,17 +95,13 @@ const About = () => {
                   <span className="px-3 py-1 bg-secondary rounded-full">
                     🌱 Continuous learner
                   </span>
-                  <span className="px-3 py-1 bg-secondary rounded-full">
-                    🤝 Team collaboration advocate
-                  </span>
+                  <span className="px-3 py-1 bg-secondary rounded-full">🤝 Team collaboration</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;

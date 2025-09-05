@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useTheme } from '@/hooks/useTheme';
 
 interface CodeRainProps {
   density?: number;
@@ -6,8 +7,9 @@ interface CodeRainProps {
   opacity?: number;
 }
 
-const CodeRain = ({ density = 50, speed = 1, opacity = 0.1 }: CodeRainProps) => {
+const CodeRain = ({ density = 50, speed = 1, opacity = 0.4 }: CodeRainProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -39,12 +41,18 @@ const CodeRain = ({ density = 50, speed = 1, opacity = 0.1 }: CodeRainProps) => 
     }
 
     const draw = () => {
-      // Semi-transparent black to create trail effect
-      ctx.fillStyle = `rgba(0, 0, 0, ${0.05 / opacity})`;
+      // Theme-based background clearing
+      const bgColor = theme === 'dark' 
+        ? `rgba(0, 0, 0, ${0.05 / opacity})` 
+        : `rgba(255, 255, 255, ${0.03 / opacity})`;
+      ctx.fillStyle = bgColor;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Set text properties
-      ctx.fillStyle = `rgba(34, 197, 94, ${opacity})`;
+      // Theme-based character color
+      const charColor = theme === 'dark' 
+        ? `rgba(34, 197, 94, ${opacity})` // Green for dark mode
+        : `rgba(59, 130, 246, ${opacity * 0.7})`; // Blue for light mode
+      ctx.fillStyle = charColor;
       ctx.font = `${fontSize}px monospace`;
 
       // Draw characters
@@ -69,7 +77,7 @@ const CodeRain = ({ density = 50, speed = 1, opacity = 0.1 }: CodeRainProps) => 
       clearInterval(interval);
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, [density, speed, opacity]);
+  }, [density, speed, opacity, theme]);
 
   return (
     <canvas

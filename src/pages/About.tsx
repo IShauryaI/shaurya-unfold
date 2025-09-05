@@ -33,7 +33,7 @@ const About = () => {
             {/* Profile Image */}
             <div className="lg:col-span-1 flex justify-center animate-scale-in">
               <div className="relative">
-                <img src="/lovable-uploads/3a2e6edf-acb8-4e31-bec1-3e16097eb3a3.png" alt="Shaurya Parshad" className="w-64 h-64 md:w-72 md:h-72 object-cover object-top rounded-2xl shadow-lg" />
+                <img src="/lovable-uploads/161fa947-bb5a-4d52-9886-f4e7a5d9e529.png" alt="Shaurya Parshad" className="w-64 h-64 md:w-72 md:h-72 object-cover object-center rounded-2xl shadow-lg" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
               </div>
             </div>

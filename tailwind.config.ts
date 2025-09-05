@@ -18,10 +18,11 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				display: ['Inter', 'system-ui', 'sans-serif'],
-			},
+      fontFamily: {
+        sans: ['Inter', 'Noto Sans JP', 'system-ui', 'sans-serif'],
+        display: ['Inter', 'Noto Sans JP', 'system-ui', 'sans-serif'],
+        jp: ['Noto Sans JP', 'sans-serif'],
+      },
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -87,11 +88,13 @@ export default {
 				'lg': 'var(--shadow-lg)',
 				'xl': 'var(--shadow-xl)',
 			},
-			backgroundImage: {
-				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-subtle': 'var(--gradient-subtle)',
-				'gradient-card': 'var(--gradient-card)',
-			},
+        backgroundImage: {
+          'gradient-primary': 'var(--gradient-primary)',
+          'gradient-subtle': 'var(--gradient-subtle)',
+          'gradient-card': 'var(--gradient-card)',
+          'gradient-sakura': 'var(--gradient-sakura)',
+          'gradient-sakura-bg': 'var(--gradient-sakura-bg)',
+        },
 			transitionDuration: {
 				'fast': 'var(--transition-fast)',
 				'normal': 'var(--transition-normal)',

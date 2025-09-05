@@ -71,7 +71,7 @@ const Home = () => {
               </Button>
               <Button variant="outline" className="group">
                 <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                Download Résumé
+                Resume
               </Button>
             </div>
 

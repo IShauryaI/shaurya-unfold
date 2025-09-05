@@ -33,6 +33,12 @@ const Contact = () => {
       label: "Email",
       value: "parshad@uwindsor.ca",
       link: "mailto:parshad@uwindsor.ca"
+    },
+    {
+      icon: Mail,
+      label: "Email",
+      value: "shauryapd@gmail.com",
+      link: "mailto:shauryapd@gmail.com"
     }
   ];
 
@@ -132,7 +138,7 @@ const Contact = () => {
                 <h2 className="text-2xl font-bold">Contact Information</h2>
                 <div className="space-y-4">
                   {contactInfo.map((info, index) => (
-                    <div key={info.label} className="flex items-center space-x-4 p-4 rounded-lg hover:bg-secondary/50 transition-colors">
+                    <div key={`${info.label}-${index}`} className="flex items-center space-x-4 p-4 rounded-lg hover:bg-secondary/50 transition-colors">
                       <div className="p-2 bg-accent/10 rounded-lg">
                         <info.icon className="h-5 w-5 text-accent" />
                       </div>

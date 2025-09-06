@@ -183,7 +183,7 @@ const Contact = () => {
                 </div>
 
                 {/* Quick Email Link */}
-                <div className="card-flat">
+                <div className="card-flat mx-auto">
                   <div className="text-center space-y-4">
                     <Mail className="h-8 w-8 text-accent mx-auto" />
                     <div className="space-y-2">
@@ -192,12 +192,14 @@ const Contact = () => {
                         Send me a direct email and I'll respond as soon as possible.
                       </p>
                     </div>
-                    <Button asChild className="btn-secondary">
-                      <a href="mailto:shauryapd@gmail.com">
-                        <Mail className="mr-2 h-4 w-4" />
-                        Send Email
-                      </a>
-                    </Button>
+                    <div className="flex justify-center">
+                      <Button asChild className="btn-secondary">
+                        <a href="mailto:shauryapd@gmail.com">
+                          <Mail className="mr-2 h-4 w-4" />
+                          Send Email
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>

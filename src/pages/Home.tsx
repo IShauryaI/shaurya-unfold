@@ -11,7 +11,7 @@ const Home = () => {
   };
   return (
     <>
-      <section className="section-padding bg-gradient-subtle relative overflow-hidden">
+      <section className="section-padding pb-0 bg-gradient-subtle relative overflow-hidden">
         {/* Breathing glow orbs */}
         <div className="glow-orb glow-orb-1"></div>
         <div className="glow-orb glow-orb-2"></div>

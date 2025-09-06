@@ -118,7 +118,7 @@ const Contact = () => {
       <div className="container-fluid">
         <div className="max-w-6xl mx-auto space-section">
           {/* Header */}
-          <div className="text-center space-y-2 animate-fade-up mb-6">
+          <div className="text-center space-y-2 animate-fade-up mb-4">
             <h1 className="text-section">Get In Touch</h1>
             <p className="text-subtitle max-w-2xl mx-auto">
               Let's discuss opportunities, collaborations, or just connect. I'm always open to interesting conversations.
@@ -126,28 +126,28 @@ const Contact = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {/* Contact Information */}
-              <div className="space-y-4 animate-fade-up" style={{ animationDelay: "200ms" }}>
-                <div className="space-y-4">
+              <div className="space-y-3 animate-fade-up" style={{ animationDelay: "200ms" }}>
+                <div className="space-y-3">
                   <h2 className="text-2xl font-bold text-center md:text-left">Contact Information</h2>
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     {contactInfo.map((info, index) => (
-                      <div key={`${info.label}-${index}`} className="flex items-center space-x-4 p-3 rounded-lg hover:bg-secondary/50 transition-colors">
+                      <div key={`${info.label}-${index}`} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-secondary/50 transition-colors">
                         <div className="p-2 bg-accent/10 rounded-lg">
-                          <info.icon className="h-5 w-5 text-accent" />
+                          <info.icon className="h-4 w-4 text-accent" />
                         </div>
-                        <div className="space-y-1">
-                          <p className="text-sm font-medium text-muted-foreground">{info.label}</p>
+                        <div className="space-y-0">
+                          <p className="text-xs font-medium text-muted-foreground">{info.label}</p>
                           {info.link ? (
                             <a
                               href={info.link}
-                              className="text-foreground hover:text-accent transition-colors font-medium"
+                              className="text-foreground hover:text-accent transition-colors font-medium text-sm"
                             >
                               {info.value}
                             </a>
                           ) : (
-                            <p className="text-foreground font-medium">{info.value}</p>
+                            <p className="text-foreground font-medium text-sm">{info.value}</p>
                           )}
                         </div>
                       </div>
@@ -157,24 +157,24 @@ const Contact = () => {
               </div>
 
               {/* Social Links */}
-              <div className="space-y-4 animate-fade-up" style={{ animationDelay: "400ms" }}>
-                <div className="space-y-4">
+              <div className="space-y-3 animate-fade-up" style={{ animationDelay: "400ms" }}>
+                <div className="space-y-3">
                   <h3 className="text-2xl font-bold text-center md:text-left">Connect Online</h3>
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     {socialLinks.map((link) => (
                       <a
                         key={link.name}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-4 p-3 rounded-lg hover:bg-secondary/50 transition-colors group"
+                        className="flex items-center space-x-3 p-2 rounded-lg hover:bg-secondary/50 transition-colors group"
                       >
                         <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
-                          <link.icon className="h-5 w-5 text-accent" />
+                          <link.icon className="h-4 w-4 text-accent" />
                         </div>
-                        <div className="space-y-1">
-                          <p className="font-medium">{link.name}</p>
-                          <p className="text-sm text-muted-foreground">@{link.username}</p>
+                        <div className="space-y-0">
+                          <p className="font-medium text-sm">{link.name}</p>
+                          <p className="text-xs text-muted-foreground">@{link.username}</p>
                         </div>
                       </a>
                     ))}
@@ -184,7 +184,7 @@ const Contact = () => {
             </div>
 
             {/* Quick Email Link - Below the main content */}
-            <div className="mt-6 animate-fade-up" style={{ animationDelay: "600ms" }}>
+            <div className="mt-4 animate-fade-up" style={{ animationDelay: "600ms" }}>
               <div className="card-flat max-w-md mx-auto">
                 <div className="text-center space-y-6">
                   <Mail className="h-8 w-8 text-accent mx-auto" />

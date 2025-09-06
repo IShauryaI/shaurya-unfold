@@ -8,9 +8,9 @@
 @layer base {
   :root {
     /* Core Colors - Light Theme */
-    --background: 0 0% 99%;
-    --foreground: 240 10% 3.9%;
-    --surface: 0 0% 97%;
+    --background: 11 83% 58%;
+    --foreground: 0 0% 98%;
+    --surface: 11 70% 52%;
     
     /* Card System */
     --card: 0 0% 100%;
@@ -18,13 +18,13 @@
     --card-hover: 0 0% 96%;
     
     /* Interactive Elements */
-    --primary: 217 91% 60%;
-    --primary-hover: 217 91% 55%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 11 83% 58%;
+    --primary-hover: 11 83% 52%;
+    --primary-foreground: 0 0% 98%;
     
-    --accent: 217 91% 60%;
-    --accent-hover: 217 91% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 11 83% 58%;
+    --accent-hover: 11 83% 52%;
+    --accent-foreground: 0 0% 98%;
     
     /* Neutral Variants */
     --secondary: 240 5% 96%;

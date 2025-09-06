@@ -26,7 +26,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="section-padding">
+    <section className="section-padding pt-0 -mt-12 md:-mt-16">
       <div className="container-fluid">
         <div className="max-w-7xl mx-auto space-section">
           {/* Header */}

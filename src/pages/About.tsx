@@ -31,7 +31,7 @@ const About = () => {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 items-start">
             {/* Profile Image */}
             <div className="lg:col-span-1 flex justify-center animate-scale-in">
               <div className="relative">
@@ -41,7 +41,7 @@ const About = () => {
             </div>
 
             {/* Story */}
-            <div className="lg:col-span-2 space-y-6 animate-fade-up">
+            <div className="lg:col-span-3 space-y-6 animate-fade-up">
               <div className="space-y-4">
                 <h2 className="text-2xl font-bold">My Journey</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">

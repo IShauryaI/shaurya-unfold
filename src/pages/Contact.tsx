@@ -156,9 +156,8 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Social Links and Email */}
+              {/* Social Links */}
               <div className="space-y-8 animate-fade-up" style={{ animationDelay: "400ms" }}>
-                {/* Social Links */}
                 <div className="space-y-6">
                   <h3 className="text-xl font-semibold text-center md:text-left">Connect Online</h3>
                   <div className="space-y-3">
@@ -181,26 +180,26 @@ const Contact = () => {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
 
-                {/* Quick Email Link */}
-                <div className="card-flat mx-auto">
-                  <div className="text-center space-y-4">
-                    <Mail className="h-8 w-8 text-accent mx-auto" />
-                    <div className="space-y-2">
-                      <h3 className="font-semibold">Prefer Email?</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Send me a direct email and I'll respond as soon as possible.
-                      </p>
-                    </div>
-                    <div className="flex justify-center">
-                      <Button asChild className="btn-secondary">
-                        <a href="mailto:shauryapd@gmail.com">
-                          <Mail className="mr-2 h-4 w-4" />
-                          Send Email
-                        </a>
-                      </Button>
-                    </div>
+            {/* Quick Email Link - Below the main content */}
+            <div className="mt-12 animate-fade-up" style={{ animationDelay: "600ms" }}>
+              <div className="card-flat max-w-md mx-auto">
+                <div className="text-center space-y-4">
+                  <Mail className="h-8 w-8 text-accent mx-auto" />
+                  <div className="space-y-2">
+                    <h3 className="font-semibold">Prefer Email?</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Send me a direct email and I'll respond as soon as possible.
+                    </p>
                   </div>
+                  <Button asChild className="btn-secondary">
+                    <a href="mailto:shauryapd@gmail.com">
+                      <Mail className="mr-2 h-4 w-4" />
+                      Send Email
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>

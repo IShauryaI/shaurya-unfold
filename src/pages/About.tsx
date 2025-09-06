@@ -17,12 +17,14 @@ const About = () => {
     title: "Modern Responsive Layouts",
     description: "Crafting adaptive designs that work seamlessly across all devices and platforms"
   }];
-  return <section className="section-padding">
-      <div className="container-fluid">
-        <div className="max-w-4xl mx-auto space-section">
-          {/* Header */}
-          <div className="text-center space-y-4 animate-fade-up">
-            <h1 className="text-section">About Me</h1>
+  return (
+    <>
+      <section className="section-padding">
+        <div className="container-fluid">
+          <div className="max-w-4xl mx-auto space-section">
+            {/* Header */}
+            <div className="text-center space-y-4 animate-fade-up">
+              <h1 className="text-section">About Me</h1>
             <p className="text-subtitle max-w-2xl mx-auto">
               Passionate about creating meaningful digital experiences through thoughtful design and clean code
             </p>
@@ -102,6 +104,8 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+    </>
+  );
 };
 export default About;

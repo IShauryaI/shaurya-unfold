@@ -118,7 +118,7 @@ const Contact = () => {
       <div className="container-fluid">
         <div className="max-w-6xl mx-auto space-section">
           {/* Header */}
-          <div className="text-center space-y-4 animate-fade-up mb-16">
+          <div className="text-center space-y-4 animate-fade-up mb-12">
             <h1 className="text-section">Get In Touch</h1>
             <p className="text-subtitle max-w-2xl mx-auto">
               Let's discuss opportunities, collaborations, or just connect. I'm always open to interesting conversations.
@@ -126,7 +126,7 @@ const Contact = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Contact Information */}
               <div className="space-y-8 animate-fade-up" style={{ animationDelay: "200ms" }}>
                 <div className="space-y-8">
@@ -184,7 +184,7 @@ const Contact = () => {
             </div>
 
             {/* Quick Email Link - Below the main content */}
-            <div className="mt-16 animate-fade-up" style={{ animationDelay: "600ms" }}>
+            <div className="mt-10 animate-fade-up" style={{ animationDelay: "600ms" }}>
               <div className="card-flat max-w-md mx-auto">
                 <div className="text-center space-y-6">
                   <Mail className="h-8 w-8 text-accent mx-auto" />

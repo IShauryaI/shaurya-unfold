@@ -118,7 +118,7 @@ const Contact = () => {
       <div className="container-fluid">
         <div className="max-w-6xl mx-auto space-section">
           {/* Header */}
-          <div className="text-center space-y-2 animate-fade-up mb-4">
+          <div className="text-center space-y-2 animate-fade-up">
             <h1 className="text-section">Get In Touch</h1>
             <p className="text-subtitle max-w-2xl mx-auto">
               Let's discuss opportunities, collaborations, or just connect. I'm always open to interesting conversations.

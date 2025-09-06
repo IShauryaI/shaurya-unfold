@@ -9,26 +9,31 @@ const Home = () => {
       block: 'start'
     });
   };
-  return <section className="section-padding bg-primary min-h-screen flex items-center">
-      <div className="container-fluid">
+  return <section className="section-padding bg-gradient-subtle relative overflow-hidden">
+      {/* Breathing glow orbs */}
+      <div className="glow-orb glow-orb-1"></div>
+      <div className="glow-orb glow-orb-2"></div>
+      <div className="glow-orb glow-orb-3"></div>
+      
+      <div className="container-fluid relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="space-y-8 animate-fade-up">
             <div className="space-y-4">
-              <h1 className="text-hero text-primary-foreground font-bold">
+              <h1 className="text-hero text-gradient">
                 Shaurya Parshad
               </h1>
-              <p className="text-subtitle text-primary-foreground/90">
+              <p className="text-subtitle">
                 UI/UX-focused Software Developer
               </p>
             </div>
 
             <div className="space-y-6">
-              <p className="text-lg leading-relaxed text-primary-foreground/80 max-w-2xl">
+              <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl">
                 Emerging software developer with a strong foundation across Python, web development, AI/ML, computer vision, data engineering, and systems programming.
               </p>
 
-              <p className="text-lg leading-relaxed text-primary-foreground/80 max-w-2xl">
+              <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl">
                 I translate business needs into working software and have delivered web/desktop apps, REST APIs, and web-crawling/search features.
               </p>
 
@@ -37,7 +42,7 @@ const Home = () => {
 
             {/* Quick Skills */}
             <div className="space-y-4">
-              <h3 className="text-sm font-semibold text-primary-foreground/70 uppercase tracking-wider">
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
                 Core Technologies
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -89,7 +94,7 @@ const Home = () => {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-primary rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative">
-                <img src="/lovable-uploads/3a2e6edf-acb8-4e31-bec1-3e16097eb3a3.png" alt="Shaurya Parshad - Software Developer" className="w-96 h-96 md:w-[480px] md:h-[480px] lg:w-[520px] lg:h-[520px] object-cover object-top rounded-2xl shadow-2xl" />
+                <img src="/lovable-uploads/3a2e6edf-acb8-4e31-bec1-3e16097eb3a3.png" alt="Shaurya Parshad - Software Developer" className="w-80 h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] object-cover object-top rounded-2xl shadow-2xl" />
               </div>
             </div>
           </div>

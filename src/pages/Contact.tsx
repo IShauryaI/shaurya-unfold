@@ -114,7 +114,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="section-padding aurora-background">
+    <section className="section-padding">
       <div className="container-fluid">
         <div className="max-w-6xl mx-auto space-section">
           {/* Header */}

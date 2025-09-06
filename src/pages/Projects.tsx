@@ -139,23 +139,6 @@ const Projects = () => {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="text-center animate-fade-up" style={{ animationDelay: "600ms" }}>
-            <div className="space-y-4">
-              <p className="text-muted-foreground">
-                Interested in collaborating on a project?
-              </p>
-              <Button 
-                className="btn-primary"
-                onClick={() => {
-                  const element = document.querySelector('#contact');
-                  element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-              >
-                Get In Touch
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

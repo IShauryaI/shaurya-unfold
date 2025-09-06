@@ -44,7 +44,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="section-padding pt-0 -mt-24 md:-mt-32">
+    <section className="section-padding pt-8 -mt-8">
       <div className="container-fluid">
         <div className="max-w-6xl mx-auto space-section">
           {/* Header */}

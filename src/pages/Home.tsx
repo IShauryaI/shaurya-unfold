@@ -90,18 +90,14 @@ const Home = () => {
                 </Button>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Profile Image Section */}
-      <section className="py-8">
-        <div className="container-fluid">
-          <div className="flex justify-center animate-scale-in">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-primary rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative">
-                <img src="/lovable-uploads/3a2e6edf-acb8-4e31-bec1-3e16097eb3a3.png" alt="Shaurya Parshad - Software Developer" className="w-80 h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] object-cover object-top rounded-2xl shadow-2xl" />
+            {/* Profile Image */}
+            <div className="flex justify-center lg:justify-end animate-scale-in">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-primary rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative">
+                  <img src="/lovable-uploads/3a2e6edf-acb8-4e31-bec1-3e16097eb3a3.png" alt="Shaurya Parshad - Software Developer" className="w-80 h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] object-cover object-top rounded-2xl shadow-2xl" />
+                </div>
               </div>
             </div>
           </div>

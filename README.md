@@ -22,7 +22,7 @@ Performance statistics and analytics are captured directly from the current prod
 
 ### Page Speed and Technical Performance
 
-![Page Speed Metrics](docs/images/pagespeed-metrics.png)
+<img width="1197" height="250" alt="Screenshot 2025-09-25 at 8 35 13 PM" src="https://github.com/user-attachments/assets/2ba3501a-de2a-44d1-8840-777c71ac9230" />
 
 The lighthouse report for the published production version delivers:
 - **Performance**: 100% (optimal speed, resources, and runtime efficiency)
@@ -34,7 +34,7 @@ Scores are validated for the desktop environment, ensuring a rapid and frictionl
 
 ### Audience and Site Engagement Analytics
 
-![Analytics Overview](docs/images/analytics-overview.png)
+<img width="1171" height="690" alt="Screenshot 2025-09-25 at 8 36 32 PM" src="https://github.com/user-attachments/assets/68e82611-846d-44a7-b301-0f44be3b504a" />
 
 Month-to-date analytics report for September 2025 demonstrates:
 - **171 total visitors** across the site, showing appreciable real-user interest
@@ -43,7 +43,7 @@ Month-to-date analytics report for September 2025 demonstrates:
 - **Bounce rate** of 83%, highlighting areas for further UX improvement and onboarding optimization
 - **Live active visitors:** 4, signifying real-time engagement at all times
 
-![Detailed Analytics](docs/images/analytics-detailed.png)
+<img width="1199" height="613" alt="Screenshot 2025-09-25 at 8 36 48 PM" src="https://github.com/user-attachments/assets/32bcbe0b-104f-41ef-aae2-3a7eaea96bd1" />
 
 **Traffic sources** emphasize direct intent and targeted referrals: 161 direct visits, complemented by niche traffic from overleaf.com (3), Bing (1), Google (1), and LinkedIn (1).
 **Geographic distribution:** Canada leads with 60 visitors, followed by the United States (54), India (13), China (3), and Italy (2), confirming global reach and cross-border interest.
@@ -55,7 +55,8 @@ Analytics reveal a substantial spike in traffic on September 5, reaching 52 uniq
 
 ## 🏗️ System Architecture
 
-![Architecture Diagram](docs/images/architecture-flowchart.png)
+<img width="1198" height="562" alt="Screenshot 2025-09-25 at 8 45 10 PM" src="https://github.com/user-attachments/assets/a3ff7830-873a-4017-9651-c4d06bc842fa" />
+
 
 The system employs a modern SPA (Single Page Application) architecture leveraging React 18, Vite, TypeScript, and component-driven best practices. The key architecture highlights include:
 - **Component System:** Built with shadcn/ui for modern UI elements, custom layout modules, and Radix UI primitives for accessibility and interactivity

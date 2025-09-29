@@ -2,7 +2,6 @@ import { ArrowRight, Download, Github, Linkedin, Mail, Target } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { TypeAnimation } from 'react-type-animation';
-
 const Home = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId);
@@ -11,8 +10,7 @@ const Home = () => {
       block: 'start'
     });
   };
-  return (
-    <>
+  return <>
       <section className="section-padding pb-0 bg-gradient-subtle relative overflow-hidden">
         {/* Breathing glow orbs */}
         <div className="glow-orb glow-orb-1"></div>
@@ -28,22 +26,7 @@ const Home = () => {
                   Shaurya Parshad
                 </h1>
                 <div className="text-subtitle min-h-[80px] md:min-h-[60px]">
-                  <TypeAnimation
-                    sequence={[
-                      'Full-Stack Software Engineer',
-                      2000,
-                      'Computer Vision Researcher',
-                      2000,
-                      'AI/ML Enthusiast',
-                      2000,
-                      'Full-Stack Developer',
-                      2000,
-                    ]}
-                    wrapper="span"
-                    speed={50}
-                    repeat={Infinity}
-                    className="text-gradient"
-                  />
+                  <TypeAnimation sequence={['Full-Stack Software Engineer', 2000, 'Computer Vision Researcher', 2000, 'AI/ML Enthusiast', 2000, 'Full-Stack Developer', 2000]} wrapper="span" speed={50} repeat={Infinity} className="text-gradient" />
                 </div>
               </div>
 
@@ -69,10 +52,7 @@ const Home = () => {
                     </a>
                   </Button>
                 </div>
-                <Badge variant="secondary" className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium">
-                  <Target className="h-4 w-4 text-accent" />
-                  🎯 Seeking Internship | Jan 2026
-                </Badge>
+                
               </div>
 
               {/* Social Links */}
@@ -113,7 +93,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </>
-  );
+    </>;
 };
 export default Home;

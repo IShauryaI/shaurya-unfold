@@ -2,9 +2,12 @@ import { useState } from "react";
 import { ExternalLink, Github, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { projects, type Project } from "@/data/projects";
+import { ProjectDetailDialog } from "@/components/ProjectDetailDialog";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState<string>("All");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
   
   const categories = ["All", "Web Development", "Data & ML", "Systems"];
   
@@ -62,8 +65,12 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="group project-card animate-scale-in"
+                className="group project-card animate-scale-in cursor-pointer"
                 style={{ animationDelay: `${300 + (index * 100)}ms` }}
+                onClick={() => {
+                  setSelectedProject(project);
+                  setDialogOpen(true);
+                }}
               >
                 <div className="relative z-10 space-y-4">
                   {/* Project Header */}
@@ -139,6 +146,11 @@ const Projects = () => {
             ))}
           </div>
 
+          <ProjectDetailDialog
+            project={selectedProject}
+            open={dialogOpen}
+            onOpenChange={setDialogOpen}
+          />
         </div>
       </div>
     </section>

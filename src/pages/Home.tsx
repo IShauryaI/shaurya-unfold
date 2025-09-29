@@ -1,7 +1,9 @@
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { TypeAnimation } from 'react-type-animation';
+
 const Home = () => {
-  const skillTags = ["UI/UX", "React", "HTML/CSS", "Tailwind", "Flask/FastAPI", "Node/Express"];
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId);
     element?.scrollIntoView({
@@ -22,70 +24,78 @@ const Home = () => {
             {/* Content */}
             <div className="space-y-8 animate-fade-up">
               <div className="space-y-4">
-                <h1 className="text-hero text-gradient">
+                <h1 className="text-hero font-bold">
                   Shaurya Parshad
                 </h1>
-                <p className="text-subtitle">
-                  UI/UX-focused Software Developer
-                </p>
+                <div className="text-subtitle min-h-[80px] md:min-h-[60px]">
+                  <TypeAnimation
+                    sequence={[
+                      'Full-Stack Software Engineer',
+                      2000,
+                      'Computer Vision Researcher',
+                      2000,
+                      'AI/ML Enthusiast',
+                      2000,
+                      'Full-Stack Developer',
+                      2000,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    repeat={Infinity}
+                    className="text-gradient"
+                  />
+                </div>
               </div>
 
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl">
-                  Emerging software developer with a strong foundation across Python, web development, AI/ML, computer vision, data engineering, and systems programming.
+                  Master's student in Applied Computing at University of Windsor, specializing in 
+                  intelligent systems and full-stack development. I build scalable applications 
+                  that solve real-world problems—from AI-powered healthcare systems to 3D 
+                  reconstruction pipelines.
                 </p>
-
-                <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl">
-                  I translate business needs into working software and have delivered web/desktop apps, REST APIs, and web-crawling/search features.
-                </p>
-
-                
-              </div>
-
-              {/* Quick Skills */}
-              <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                  Core Technologies
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {skillTags.map(skill => <span key={skill} className="skill-chip">
-                      {skill}
-                    </span>)}
-                </div>
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button onClick={() => scrollToSection('#projects')} className="btn-primary">
-                  View Projects
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button onClick={() => scrollToSection('#contact')} className="btn-secondary">
-                  Contact Me
-                </Button>
-                <Button variant="outline" className="group" asChild>
-                  <a href="https://drive.google.com/uc?export=download&id=1s9_RFndZIar2aHot2mLHnTjEic5LpYEf" target="_blank" rel="noopener noreferrer">
-                    <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                    Resume
-                  </a>
-                </Button>
+              <div className="space-y-4">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button onClick={() => scrollToSection('#projects')} className="btn-primary group">
+                    View Projects
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                  <Button asChild className="btn-secondary">
+                    <a href="mailto:parshad@uwindsor.ca">
+                      Get in Touch
+                    </a>
+                  </Button>
+                </div>
+                <Badge variant="secondary" className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium">
+                  <Target className="h-4 w-4 text-accent" />
+                  🎯 Seeking Internship | Jan 2026
+                </Badge>
               </div>
 
               {/* Social Links */}
               <div className="flex space-x-4 pt-4">
-                <Button variant="ghost" size="sm" asChild className="w-10 h-10 p-0">
-                  <a href="https://github.com/IShauryaI" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <Button variant="ghost" size="sm" asChild className="w-10 h-10 p-0 hover:bg-accent/10">
+                  <a href="https://github.com/IShauryaI" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
                     <Github className="h-5 w-5" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="sm" asChild className="w-10 h-10 p-0">
-                  <a href="https://linkedin.com/in/shaurya-parshad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Button variant="ghost" size="sm" asChild className="w-10 h-10 p-0 hover:bg-accent/10">
+                  <a href="https://linkedin.com/in/shaurya-parshad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
                     <Linkedin className="h-5 w-5" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="sm" asChild className="w-10 h-10 p-0">
-                  <a href="mailto:shauryapd@gmail.com" aria-label="Email">
+                <Button variant="ghost" size="sm" asChild className="w-10 h-10 p-0 hover:bg-accent/10">
+                  <a href="mailto:parshad@uwindsor.ca" aria-label="Send Email">
                     <Mail className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" asChild className="px-4">
+                  <a href="https://drive.google.com/uc?export=download&id=1s9_RFndZIar2aHot2mLHnTjEic5LpYEf" target="_blank" rel="noopener noreferrer">
+                    <Download className="mr-2 h-4 w-4" />
+                    Resume
                   </a>
                 </Button>
               </div>

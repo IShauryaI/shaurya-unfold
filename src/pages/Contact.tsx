@@ -17,10 +17,10 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: MapPin,
-      label: "Location",
-      value: "Windsor, Ontario",
-      link: null
+      icon: Mail,
+      label: "Email",
+      value: "parshad@uwindsor.ca",
+      link: "mailto:parshad@uwindsor.ca"
     },
     {
       icon: Phone,
@@ -29,10 +29,10 @@ const Contact = () => {
       link: "tel:+12267594638"
     },
     {
-      icon: Mail,
-      label: "Email",
-      value: "shauryapd@gmail.com",
-      link: "mailto:shauryapd@gmail.com"
+      icon: MapPin,
+      label: "Location",
+      value: "Windsor, Ontario, Canada",
+      link: null
     }
   ];
 
@@ -118,10 +118,10 @@ const Contact = () => {
       <div className="container-fluid">
         <div className="max-w-6xl mx-auto space-section">
           {/* Header */}
-          <div className="text-center space-y-2 animate-fade-up">
-            <h1 className="text-section">Get In Touch</h1>
+          <div className="text-center space-y-4 animate-fade-up">
+            <h1 className="text-section">Let's Build Something Amazing</h1>
             <p className="text-subtitle max-w-2xl mx-auto">
-              Let's discuss opportunities, collaborations, or just connect. I'm always open to interesting conversations.
+              I'm currently seeking Software Engineering Internship opportunities starting January 2026. Let's connect!
             </p>
           </div>
 
@@ -183,21 +183,32 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Quick Email Link - Below the main content */}
-            <div className="mt-4 animate-fade-up" style={{ animationDelay: "600ms" }}>
-              <div className="card-flat max-w-md mx-auto">
-                <div className="text-center space-y-6">
-                  <Mail className="h-8 w-8 text-accent mx-auto" />
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-semibold">Prefer Email?</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Send me a direct email and I'll respond as soon as possible.
-                    </p>
-                  </div>
-                  <Button asChild className="btn-secondary">
-                    <a href="mailto:shauryapd@gmail.com">
+            {/* Call to Action - Below the main content */}
+            <div className="mt-8 animate-fade-up" style={{ animationDelay: "600ms" }}>
+              <div className="card-elevated text-center space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold">Ready to Connect?</h3>
+                  <p className="text-muted-foreground max-w-lg mx-auto">
+                    Whether you're looking for an intern, want to collaborate on a project, or just want to chat about technology—I'd love to hear from you!
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <Button asChild className="btn-primary">
+                    <a href="mailto:parshad@uwindsor.ca">
                       <Mail className="mr-2 h-4 w-4" />
-                      Send Email
+                      Email Me
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <a href="https://linkedin.com/in/shaurya-parshad" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="mr-2 h-4 w-4" />
+                      Connect on LinkedIn
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <a href="https://drive.google.com/uc?export=download&id=1s9_RFndZIar2aHot2mLHnTjEic5LpYEf" target="_blank" rel="noopener noreferrer">
+                      <Send className="mr-2 h-4 w-4" />
+                      Download Resume
                     </a>
                   </Button>
                 </div>

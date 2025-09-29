@@ -4,7 +4,7 @@ export interface Project {
   description: string;
   longDescription: string;
   technologies: string[];
-  category: "Web Development" | "Data & ML" | "Systems" | "Mobile";
+  category: "Web Development" | "Data & ML" | "Systems" | "Mobile" | "Computer Vision";
   featured: boolean;
   links: {
     github?: string;
@@ -13,60 +13,131 @@ export interface Project {
   };
   image?: string;
   status: "Completed" | "In Progress" | "Planned";
+  metrics?: { label: string; value: string; description: string }[];
+  keyFeatures?: string[];
+  date?: string;
 }
 
 export const projects: Project[] = [
   {
-    id: "stereo-3d-reconstruction",
-    title: "Stereo Images to 3D Reconstruction",
-    description: "Interactive 3D Depth Representation Tool",
-    longDescription: "Captured a stereo chessboard pair and calibrated both cameras to recover intrinsics for 3D mapping. Computed dense disparities with StereoSGBM to reduce noise and fill low-texture regions. Reprojected disparity to real-world coordinates, built an interactive 3D point-cloud viewer colored by left image. Validated mapping by reconstructing the right image from left+disparity and visually comparing against ground truth, documented trade-offs between uncalibrated and calibrated rectification.",
-    technologies: ["PyTorch", "OpenCV", "Plotly", "Python", "3D Reconstruction", "Computer Vision", "Stereo Vision", "Point Cloud"],
+    id: "stereo-vision-3d",
+    title: "3D Reconstruction from Stereo Vision",
+    description: "End-to-end computer vision pipeline for metric 3D modeling",
+    longDescription: "Built complete stereo vision system covering camera calibration, epipolar geometry, dense matching, and 3D point-cloud reconstruction. Implemented dual approaches at each stage (OpenCV vs custom algorithms) to demonstrate trade-offs between accuracy and speed.",
+    technologies: [
+      "Python",
+      "OpenCV", 
+      "NumPy",
+      "SIFT",
+      "FLANN",
+      "RANSAC",
+      "Plotly",
+      "Matplotlib",
+      "Google Colab"
+    ],
+    category: "Computer Vision",
+    featured: true,
+    links: {
+      github: "https://github.com/IShauryaI/stereo-vision-reconstruction"
+    },
+    status: "Completed",
+    metrics: [
+      { label: "3D Points", value: "150k+", description: "Generated per scene" },
+      { label: "Depth Coverage", value: "95%", description: "Valid disparities" },
+      { label: "Accuracy", value: "<0.5px", description: "Reprojection error" },
+      { label: "Processing", value: "10 FPS", description: "Real-time capable" }
+    ],
+    keyFeatures: [
+      "Dual camera calibration (OpenCV + custom SVD/DLT)",
+      "Interactive epipolar geometry with ZNCC matching",
+      "Comparative dense stereo (StereoBM vs ZNCC edge interpolation)",
+      "Metric 3D reconstruction with RGB texture mapping"
+    ],
+    date: "Jan 2025 - Apr 2025"
+  },
+  {
+    id: "wellbeing-healthcare",
+    title: "Wellbeing — AI Recommendations System",
+    description: "HIPAA-compliant AI engine for symptom-based medicine recommendations",
+    longDescription: "Developed HIPAA-compliant AI health recommendation system delivering symptom-based medicine suggestions with 80% accuracy. Architected microservices using FastAPI and Django, implementing role-based access control and secure REST APIs for healthcare data processing.",
+    technologies: ["Python", "React", "Django", "FastAPI", "PostgreSQL", "Docker", "AI/ML"],
     category: "Data & ML",
     featured: true,
     links: {
       github: "https://github.com/IShauryaI"
     },
-    status: "Completed"
+    status: "Completed",
+    metrics: [
+      { label: "Accuracy", value: "80%", description: "Recommendation precision" }
+    ],
+    keyFeatures: [
+      "HIPAA-compliant architecture",
+      "FastAPI microservices",
+      "Role-based access control",
+      "Secure REST APIs"
+    ],
+    date: "Jan 2025 - Apr 2025"
   },
   {
-    id: "wellbeing-healthcare",
-    title: "Wellbeing - Healthcare Symptom Analysis Platform",
-    description: "Healthcare platform delivering personalized symptom analysis and medication suggestions",
-    longDescription: "Led a 4-member agile team, managed sprint planning, delegated tasks and led code reviews. Architected and deployed a platform delivering personalized symptom analysis and medication suggestions. Developed a review module processing medicine reviews to support pharmaceutical analytics. Enhanced UI/UX to improve accessibility and engagement for patients and doctors.",
-    technologies: ["Django", "Python", "JavaScript", "HTML", "CSS", "Bootstrap", "Healthcare Analytics", "Team Leadership"],
-    category: "Web Development",
+    id: "microloan-fraud",
+    title: "Microloan Fraud Detection — Analytics System",
+    description: "Processing 11M+ loan records with XGBoost achieving 96% ROC-AUC",
+    longDescription: "Processed 11M+ loan records with XGBoost + ensemble models, achieving 96% ROC-AUC. Built scalable fraud detection workflows with Apache Airflow orchestration and containerized deployment on AWS.",
+    technologies: ["Python", "Java", "Apache Airflow", "Docker", "PostgreSQL", "AWS", "XGBoost"],
+    category: "Data & ML",
     featured: true,
     links: {
       github: "https://github.com/IShauryaI"
     },
-    status: "Completed"
-  },
-  {
-    id: "daily-delivery",
-    title: "Daily Delivery - Grocery Shopping Application",
-    description: "Django-based delivery management system with automated order tracking",
-    longDescription: "Directed project planning: defined scope, set milestones, and managed stakeholder expectations with weekly status reports. Coached and onboarded three junior developers through pair-programming sessions and technical workshops, improving delivery speed and code quality. Designed and implemented a Django/Python/MySQL delivery management system automating order placement, tracking, and staff onboarding. Developed interactive dashboards integrating customer data and reporting to support data-driven operational decisions.",
-    technologies: ["Python", "Django", "Tkinter", "MySQL", "HTML", "CSS", "Bootstrap", "JavaScript", "Project Management"],
-    category: "Web Development",
-    featured: true,
-    links: {
-      github: "https://github.com/IShauryaI"
-    },
-    status: "Completed"
+    status: "Completed",
+    metrics: [
+      { label: "Records", value: "11M+", description: "Processed" },
+      { label: "ROC-AUC", value: "96%", description: "Model accuracy" }
+    ],
+    keyFeatures: [
+      "XGBoost ensemble models",
+      "Apache Airflow orchestration",
+      "Scalable fraud detection workflows"
+    ],
+    date: "May 2025 - Aug 2025"
   },
   {
     id: "distributed-file-system",
-    title: "Distributed File System",
-    description: "Multi-server distributed file system with fault tolerance",
-    longDescription: "Client–server architecture using sockets and concurrency for distributed file operations. Implements fault-tolerant operations across multiple nodes with focus on data consistency and system reliability.",
-    technologies: ["C/C++", "Sockets", "Multi-threading", "Distributed Systems", "Client-Server Architecture", "Fault Tolerance"],
+    title: "Distributed File System — Multi-Server Architecture",
+    description: "4-node concurrent file system using C sockets + POSIX threads with fault tolerance",
+    longDescription: "Implemented 4-node concurrent file system using C sockets + POSIX threads with fault tolerance. Architected automated server health monitoring achieving near-zero downtime through comprehensive fault tolerance mechanisms.",
+    technologies: ["C", "POSIX Threads", "IPv4 Sockets", "Linux", "Bash"],
     category: "Systems",
     featured: true,
     links: {
       github: "https://github.com/IShauryaI"
     },
-    status: "Completed"
+    status: "Completed",
+    keyFeatures: [
+      "4-node concurrent architecture",
+      "Fault tolerance mechanisms",
+      "Automated server health monitoring",
+      "Near-zero downtime"
+    ],
+    date: "Jan 2025 - Apr 2025"
+  },
+  {
+    id: "portfolio-website",
+    title: "Personal Portfolio Website",
+    description: "Responsive portfolio built in React + TypeScript with 100% Lighthouse performance",
+    longDescription: "Built responsive portfolio site in React + TypeScript, achieving 100% Lighthouse performance via optimized components & CSS3. Implemented modern design system with animations, accessibility features, and SEO optimization.",
+    technologies: ["React", "TypeScript", "CSS3", "JavaScript", "Git", "CI/CD"],
+    category: "Web Development",
+    featured: false,
+    links: {
+      github: "https://github.com/IShauryaI/portfolio",
+      live: "https://shauryaparshad.com"
+    },
+    status: "Completed",
+    metrics: [
+      { label: "Lighthouse", value: "100%", description: "Performance score" }
+    ],
+    date: "July 2025 - Aug 2025"
   }
 ];
 

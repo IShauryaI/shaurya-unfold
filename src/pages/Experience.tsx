@@ -4,18 +4,25 @@ const Experience = () => {
   const workExperience = [
     {
       title: "Software Engineer Intern",
-      company: "VMM Education",
-      location: "Remote",
+      company: "Veenus Mind Media",
+      location: "Amritsar, Punjab, India",
       period: "Sep 2023 – Mar 2024",
       type: "Internship",
-      description: "During my Software Engineer Internship at VMM Education (Sep 2023–Mar 2024), I shipped a grocery delivery platform that accelerated delivery cycles and improved operational efficiency by 20%.",
+      description: "Full-stack development role where I gained hands-on experience across the entire technology stack - from frontend frameworks to backend services and database management.",
       highlights: [
-        "Collaborated with UI/UX team to implement responsive frontend components",
-        "Delivered full-stack features through Agile development cycles",
-        "Optimized database queries and API endpoints for improved performance",
-        "Contributed to code reviews and maintained high code quality standards"
+        "Learned and applied modern web development technologies including React, Angular, Django, and Node.js while building healthcare applications, improving system performance by 30% through optimized code and comprehensive testing procedures that reduced software defects by 60%",
+        "Developed full-stack features using Python, Java, .NET, and JavaScript, building RESTful APIs and database integrations with SQL and PostgreSQL to support complex healthcare data processing workflows",
+        "Gained proficiency in frontend technologies (HTML5, CSS3, JavaScript frameworks) and backend services, participating in design reviews and regression testing processes while maintaining 99.9% system reliability through quality assurance practices"
       ],
-      technologies: ["React", "Node.js", "MongoDB", "REST APIs", "Agile Development"]
+      technologies: ["React", "Angular", "Django", "Python", "Java", ".NET Core", "Node.js", "SQL", "PostgreSQL", "RESTful APIs"],
+      keyLearnings: [
+        "Full-stack web development (frontend + backend)",
+        "Modern JavaScript frameworks (React, Angular)",
+        "Backend services (Django, .NET, Node.js)",
+        "Database design and optimization",
+        "API development and integration",
+        "Agile development and code review practices"
+      ]
     }
   ];
 
@@ -110,6 +117,20 @@ const Experience = () => {
                         ))}
                       </div>
                     </div>
+
+                    {/* Key Learnings */}
+                    {job.keyLearnings && (
+                      <div className="space-y-2 mt-4">
+                        <h4 className="font-semibold text-sm">Key Learnings:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {job.keyLearnings.map((learning) => (
+                            <span key={learning} className="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">
+                              {learning}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

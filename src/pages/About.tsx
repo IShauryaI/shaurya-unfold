@@ -1,111 +1,134 @@
-import { Code2, Palette, Users, Zap } from "lucide-react";
+import { Award, Code2, Target, TrendingUp } from "lucide-react";
+
 const About = () => {
-  const focusAreas = [{
-    icon: Palette,
-    title: "UI/UX Design Thinking",
-    description: "Creating user-centered interfaces with accessibility and usability at the forefront"
-  }, {
-    icon: Code2,
-    title: "Frontend Engineering",
-    description: "Building responsive, performant web applications with modern frameworks and tools"
-  }, {
-    icon: Users,
-    title: "Collaborative Development",
-    description: "Working effectively in Agile teams to deliver software solutions that meet business needs"
-  }, {
-    icon: Zap,
-    title: "Modern Responsive Layouts",
-    description: "Crafting adaptive designs that work seamlessly across all devices and platforms"
-  }];
+  const highlights = [
+    { 
+      label: "3D Points", 
+      value: "150k+",
+      description: "Reconstructed from stereo images",
+      icon: Award
+    },
+    { 
+      label: "Fraud Detection", 
+      value: "96%",
+      description: "ROC-AUC on 11M+ records",
+      icon: TrendingUp
+    },
+    { 
+      label: "AI Accuracy", 
+      value: "80%",
+      description: "Health recommendation system",
+      icon: Target
+    },
+    { 
+      label: "Performance", 
+      value: "100%",
+      description: "Lighthouse score achieved",
+      icon: Code2
+    }
+  ];
+
   return (
-    <>
-      <section className="section-padding pt-0 -mt-12 md:-mt-16">
-        <div className="container-fluid">
-          <div className="max-w-4xl mx-auto space-section">
-            {/* Header */}
-            <div className="text-center space-y-4 animate-fade-up">
-              <h1 className="text-section">About Me</h1>
+    <section className="section-padding pt-0 -mt-12 md:-mt-16">
+      <div className="container-fluid">
+        <div className="max-w-4xl mx-auto space-section">
+          {/* Header */}
+          <div className="text-center space-y-4 animate-fade-up">
+            <h1 className="text-section">About Me</h1>
             <p className="text-subtitle max-w-2xl mx-auto">
-              Passionate about creating meaningful digital experiences through thoughtful design and clean code
+              Building intelligent systems that solve real-world problems
             </p>
           </div>
 
-          {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 items-start">
-            {/* Profile Image */}
-            <div className="lg:col-span-1 flex justify-center animate-scale-in">
-              <div className="relative">
-                <img src="/lovable-uploads/161fa947-bb5a-4d52-9886-f4e7a5d9e529.png" alt="Shaurya Parshad" className="w-64 h-64 md:w-72 md:h-72 object-cover object-center rounded-2xl shadow-lg" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
+          {/* Main Content */}
+          <div className="grid grid-cols-1 gap-8">
+            {/* Story */}
+            <div className="card-elevated animate-fade-up" style={{ animationDelay: "200ms" }}>
+              <div className="space-y-6">
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    I'm a software engineer with a passion for building intelligent, scalable systems. 
+                    My work spans the full stack—from designing microservices architectures and 
+                    distributed systems to implementing computer vision algorithms and machine learning 
+                    pipelines.
+                  </p>
+                  
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-semibold text-foreground">What I Do</h3>
+                    <ul className="space-y-2 pl-4">
+                      <li className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>Build production-ready applications with Python, C++, Java, and modern web frameworks</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>Design and deploy cloud-native solutions on AWS, Azure, and GCP</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>Implement computer vision systems for 3D reconstruction and spatial analysis</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>Architect data pipelines processing millions of records with Apache Airflow</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-semibold text-foreground">Background</h3>
+                    <p>
+                      Previously at <strong className="text-foreground">Veenus Mind Media</strong> (Sep 2023 - Mar 2024), where I dove deep into 
+                      full-stack development—learning React, Angular, Django, Python, Java, .NET, and 
+                      Node.js while building healthcare applications. During this internship, I improved 
+                      system performance by 30%, reduced software defects by 60%, and maintained 99.9% 
+                      reliability. This experience gave me hands-on proficiency across the entire 
+                      technology stack, from frontend frameworks to backend services and database management.
+                    </p>
+                    <p>
+                      Currently pursuing <strong className="text-foreground">Master of Applied Computing</strong> at <strong className="text-foreground">University of Windsor</strong> 
+                      (Jan 2025 - Present), with final semester internship starting January 2026.
+                    </p>
+                    <p>
+                      When I'm not coding, I'm exploring the latest in AI/ML research, contributing 
+                      to open-source projects, or experimenting with new tech stacks.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Story */}
-            <div className="lg:col-span-3 space-y-6 animate-fade-up">
-              <div className="space-y-4">
-                <h2 className="text-2xl font-bold">My Journey</h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    I'm a software developer who believes that great technology starts with understanding people. 
-                    Currently pursuing my Master of Applied Computing at the University of Windsor, I bring a 
-                    design-conscious approach to every project I work on.
-                  </p>
-                  
-                  <p>
-                    My experience spans from frontend interfaces to backend systems, but what excites me most is 
-                    the intersection of design and development. I enjoy translating complex business requirements 
-                    into intuitive user experiences while maintaining clean, maintainable code.
-                  </p>
-
-                  <p>
-                    During my internship at VMM Education, I had the opportunity to work on a complete grocery 
-                    delivery platform, where I learned the importance of balancing user needs with technical 
-                    constraints to deliver real business value.
-                  </p>
-                </div>
-              </div>
-
-              {/* Current Focus */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">Currently Focusing On</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {focusAreas.map((area, index) => <div key={area.title} className="card-flat group hover:border-accent/50 animate-fade-up" style={{
-                  animationDelay: `${index * 100}ms`
-                }}>
-                      <div className="flex items-start space-x-3">
-                        <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
-                          <area.icon className="h-5 w-5 text-accent" />
-                        </div>
-                        <div className="space-y-1">
-                          <h4 className="font-medium text-sm">{area.title}</h4>
-                          <p className="text-xs text-muted-foreground leading-relaxed">
-                            {area.description}
-                          </p>
+            {/* Recent Highlights */}
+            <div className="animate-fade-up" style={{ animationDelay: "400ms" }}>
+              <h2 className="text-2xl font-bold mb-6 text-center">Recent Highlights</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {highlights.map((highlight, index) => (
+                  <div 
+                    key={highlight.label}
+                    className="card-elevated text-center group hover:border-accent/50"
+                    style={{ animationDelay: `${400 + (index * 100)}ms` }}
+                  >
+                    <div className="space-y-3">
+                      <div className="flex justify-center">
+                        <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
+                          <highlight.icon className="h-6 w-6 text-accent" />
                         </div>
                       </div>
-                    </div>)}
-                </div>
-              </div>
-
-              {/* Fun Facts */}
-              <div className="space-y-4 pt-4">
-                <h3 className="text-xl font-semibold">Beyond Code</h3>
-                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                  <span className="px-3 py-1 bg-secondary rounded-full">
-                    🎯 Problem-solving enthusiast
-                  </span>
-                  <span className="px-3 py-1 bg-secondary rounded-full">
-                    🌱 Continuous learner
-                  </span>
-                  <span className="px-3 py-1 bg-secondary rounded-full">🤝 Team collaboration</span>
-                </div>
+                      <div className="space-y-1">
+                        <div className="text-2xl font-bold text-accent">{highlight.value}</div>
+                        <div className="text-sm font-medium">{highlight.label}</div>
+                        <div className="text-xs text-muted-foreground">{highlight.description}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    </>
   );
 };
+
 export default About;

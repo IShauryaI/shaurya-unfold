@@ -64,7 +64,7 @@ export const projects: Project[] = [
     category: "Data & ML",
     featured: true,
     links: {
-      github: "https://github.com/IShauryaI"
+      github: "https://github.com/IShauryaI/wellbeingaifinalversion"
     },
     status: "Completed",
     metrics: [
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     category: "Data & ML",
     featured: true,
     links: {
-      github: "https://github.com/IShauryaI"
+      github: "https://github.com/IShauryaI/microloan-fraud-detection"
     },
     status: "Completed",
     metrics: [
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     category: "Systems",
     featured: true,
     links: {
-      github: "https://github.com/IShauryaI"
+      github: "https://github.com/IShauryaI/Distributed-File-System"
     },
     status: "Completed",
     keyFeatures: [
@@ -130,7 +130,7 @@ export const projects: Project[] = [
     category: "Web Development",
     featured: false,
     links: {
-      github: "https://github.com/IShauryaI/portfolio",
+      github: "https://github.com/IShauryaI/shaurya-unfold",
       live: "https://shauryaparshad.com"
     },
     status: "Completed",

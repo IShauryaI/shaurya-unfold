@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -13,52 +12,46 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "parshad@uwindsor.ca",
-      link: "mailto:parshad@uwindsor.ca"
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "(226) 759-4638",
-      link: "tel:+12267594638"
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "Windsor, Ontario, Canada",
-      link: null
-    }
-  ];
-
-  const socialLinks = [
-    {
-      name: "GitHub",
-      url: "https://github.com/IShauryaI",
-      icon: Github,
-      username: "IShauryaI"
-    },
-    {
-      name: "LinkedIn",
-      url: "https://linkedin.com/in/shaurya-parshad",
-      icon: Linkedin,
-      username: "shaurya-parshad"
-    }
-  ];
-
+  const {
+    toast
+  } = useToast();
+  const contactInfo = [{
+    icon: Mail,
+    label: "Email",
+    value: "parshad@uwindsor.ca",
+    link: "mailto:parshad@uwindsor.ca"
+  }, {
+    icon: Phone,
+    label: "Phone",
+    value: "(226) 759-4638",
+    link: "tel:+12267594638"
+  }, {
+    icon: MapPin,
+    label: "Location",
+    value: "Windsor, Ontario, Canada",
+    link: null
+  }];
+  const socialLinks = [{
+    name: "GitHub",
+    url: "https://github.com/IShauryaI",
+    icon: Github,
+    username: "IShauryaI"
+  }, {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/shaurya-parshad",
+    icon: Linkedin,
+    username: "shaurya-parshad"
+  }];
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -68,7 +61,7 @@ const Contact = () => {
       toast({
         title: "Validation Error",
         description: "Please fill in all required fields.",
-        variant: "destructive",
+        variant: "destructive"
       });
       setIsSubmitting(false);
       return;
@@ -80,19 +73,17 @@ const Contact = () => {
       toast({
         title: "Invalid Email",
         description: "Please enter a valid email address.",
-        variant: "destructive",
+        variant: "destructive"
       });
       setIsSubmitting(false);
       return;
     }
-
     try {
       // Simulate form submission (replace with actual form handler)
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
       toast({
         title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
+        description: "Thank you for reaching out. I'll get back to you soon!"
       });
 
       // Reset form
@@ -106,15 +97,13 @@ const Contact = () => {
       toast({
         title: "Error",
         description: "Failed to send message. Please try again or use the email link above.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <section className="section-padding pt-0 -mt-24 md:-mt-32">
+  return <section className="section-padding pt-0 -mt-24 md:-mt-32">
       <div className="container-fluid">
         <div className="max-w-6xl mx-auto space-section">
           {/* Header */}
@@ -128,47 +117,35 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {/* Contact Information */}
-              <div className="space-y-3 animate-fade-up" style={{ animationDelay: "200ms" }}>
+              <div className="space-y-3 animate-fade-up" style={{
+              animationDelay: "200ms"
+            }}>
                 <div className="space-y-3">
                   <h2 className="text-2xl font-bold text-center md:text-left">Contact Information</h2>
                   <div className="space-y-2">
-                    {contactInfo.map((info, index) => (
-                      <div key={`${info.label}-${index}`} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-secondary/50 transition-colors">
+                    {contactInfo.map((info, index) => <div key={`${info.label}-${index}`} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-secondary/50 transition-colors">
                         <div className="p-2 bg-accent/10 rounded-lg">
                           <info.icon className="h-4 w-4 text-accent" />
                         </div>
                         <div className="space-y-0">
                           <p className="text-xs font-medium text-muted-foreground">{info.label}</p>
-                          {info.link ? (
-                            <a
-                              href={info.link}
-                              className="text-foreground hover:text-accent transition-colors font-medium text-sm"
-                            >
+                          {info.link ? <a href={info.link} className="text-foreground hover:text-accent transition-colors font-medium text-sm">
                               {info.value}
-                            </a>
-                          ) : (
-                            <p className="text-foreground font-medium text-sm">{info.value}</p>
-                          )}
+                            </a> : <p className="text-foreground font-medium text-sm">{info.value}</p>}
                         </div>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
               </div>
 
               {/* Social Links */}
-              <div className="space-y-3 animate-fade-up" style={{ animationDelay: "400ms" }}>
+              <div className="space-y-3 animate-fade-up" style={{
+              animationDelay: "400ms"
+            }}>
                 <div className="space-y-3">
                   <h3 className="text-2xl font-bold text-center md:text-left">Connect Online</h3>
                   <div className="space-y-2">
-                    {socialLinks.map((link) => (
-                      <a
-                        key={link.name}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-3 p-2 rounded-lg hover:bg-secondary/50 transition-colors group"
-                      >
+                    {socialLinks.map(link => <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 p-2 rounded-lg hover:bg-secondary/50 transition-colors group">
                         <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
                           <link.icon className="h-4 w-4 text-accent" />
                         </div>
@@ -176,21 +153,20 @@ const Contact = () => {
                           <p className="font-medium text-sm">{link.name}</p>
                           <p className="text-xs text-muted-foreground">@{link.username}</p>
                         </div>
-                      </a>
-                    ))}
+                      </a>)}
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Call to Action - Below the main content */}
-            <div className="mt-8 animate-fade-up" style={{ animationDelay: "600ms" }}>
+            <div className="mt-8 animate-fade-up" style={{
+            animationDelay: "600ms"
+          }}>
               <div className="card-elevated text-center space-y-6">
                 <div className="space-y-4">
                   <h3 className="text-2xl font-bold">Ready to Connect?</h3>
-                  <p className="text-muted-foreground max-w-lg mx-auto">
-                    Whether you're looking for an intern, want to collaborate on a project, or just want to chat about technology—I'd love to hear from you!
-                  </p>
+                  <p className="text-muted-foreground max-w-lg mx-auto">Whether you're looking for an intern, want to collaborate on a project, or just want to chat about technology. I'd love to hear from you!</p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Button asChild className="btn-primary">
@@ -217,8 +193,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;

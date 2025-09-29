@@ -32,10 +32,15 @@ const Home = () => {
 
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl">
-                  Master's student in Applied Computing at University of Windsor, specializing in 
-                  intelligent systems and full-stack development. I build scalable applications 
-                  that solve real-world problems—from AI-powered healthcare systems to 3D 
-                  reconstruction pipelines.
+                  I'm fascinated by hard problems, the kind that require both algorithmic thinking and engineering craftsmanship. Whether it's reconstructing 3D worlds from flat images, detecting fraud in millions of transactions, or building healthcare systems that actually help people, I thrive on turning "that's impossible" into "here's how it works."
+                </p>
+                
+                <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl">
+                  As an AI enthusiast, I'm constantly exploring emerging technologies, from OpenAI's latest APIs to Claude's capabilities, from GitHub Copilot to cutting-edge computer vision techniques. I believe the best engineers never stop learning, which is why I'm always experimenting with new AI tools and integrating them into practical solutions.
+                </p>
+                
+                <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl">
+                  💡 I write code that matters and design experiences that delight. Let's build something amazing together.
                 </p>
               </div>
 

@@ -117,44 +117,54 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {/* Contact Information */}
-              <div className="space-y-3 animate-fade-up" style={{
+              <div className="space-y-4 animate-fade-up" style={{
               animationDelay: "200ms"
             }}>
+                <h2 className="text-2xl font-bold text-center md:text-left">Contact Information</h2>
                 <div className="space-y-3">
-                  <h2 className="text-2xl font-bold text-center md:text-left">Contact Information</h2>
-                  <div className="space-y-2">
-                    {contactInfo.map((info, index) => <div key={`${info.label}-${index}`} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-secondary/50 transition-colors">
-                        <div className="p-2 bg-accent/10 rounded-lg">
-                          <info.icon className="h-4 w-4 text-accent" />
-                        </div>
-                        <div className="space-y-0">
-                          <p className="text-xs font-medium text-muted-foreground">{info.label}</p>
-                          {info.link ? <a href={info.link} className="text-foreground hover:text-accent transition-colors font-medium text-sm">
-                              {info.value}
-                            </a> : <p className="text-foreground font-medium text-sm">{info.value}</p>}
-                        </div>
-                      </div>)}
-                  </div>
+                  {contactInfo.map((info, index) => (
+                    <div key={`${info.label}-${index}`} className="flex items-start space-x-4 p-3 rounded-lg hover:bg-secondary/50 transition-colors min-h-[60px]">
+                      <div className="p-2.5 bg-accent/10 rounded-lg flex-shrink-0">
+                        <info.icon className="h-5 w-5 text-accent" />
+                      </div>
+                      <div className="flex-1 pt-0.5">
+                        <p className="text-sm font-medium text-muted-foreground mb-0.5">{info.label}</p>
+                        {info.link ? (
+                          <a href={info.link} className="text-foreground hover:text-accent transition-colors font-semibold">
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p className="text-foreground font-semibold">{info.value}</p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
               {/* Social Links */}
-              <div className="space-y-3 animate-fade-up" style={{
+              <div className="space-y-4 animate-fade-up" style={{
               animationDelay: "400ms"
             }}>
+                <h3 className="text-2xl font-bold text-center md:text-left">Connect Online</h3>
                 <div className="space-y-3">
-                  <h3 className="text-2xl font-bold text-center md:text-left">Connect Online</h3>
-                  <div className="space-y-2">
-                    {socialLinks.map(link => <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 p-2 rounded-lg hover:bg-secondary/50 transition-colors group">
-                        <div className="p-2 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
-                          <link.icon className="h-4 w-4 text-accent" />
-                        </div>
-                        <div className="space-y-0">
-                          <p className="font-medium text-sm">{link.name}</p>
-                          <p className="text-xs text-muted-foreground">@{link.username}</p>
-                        </div>
-                      </a>)}
-                  </div>
+                  {socialLinks.map(link => (
+                    <a 
+                      key={link.name} 
+                      href={link.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-start space-x-4 p-3 rounded-lg hover:bg-secondary/50 transition-colors group min-h-[60px]"
+                    >
+                      <div className="p-2.5 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors flex-shrink-0">
+                        <link.icon className="h-5 w-5 text-accent" />
+                      </div>
+                      <div className="flex-1 pt-0.5">
+                        <p className="font-semibold">{link.name}</p>
+                        <p className="text-sm text-muted-foreground">@{link.username}</p>
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>

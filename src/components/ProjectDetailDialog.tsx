@@ -161,22 +161,8 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
               {loading ? (
                 <div className="text-sm text-muted-foreground">Loading README...</div>
               ) : readme ? (
-                <div className="prose prose-sm max-w-none dark:prose-invert prose-headings:mt-6 prose-headings:mb-4 prose-p:my-4 prose-pre:my-4 prose-ul:my-4 prose-ol:my-4 prose-li:my-1">
-                  <ReactMarkdown 
-                    components={{
-                      p: ({ children }) => <p className="whitespace-pre-wrap">{children}</p>,
-                      code: ({ className, children }) => {
-                        const isInline = !className;
-                        return isInline ? (
-                          <code className="bg-secondary px-1.5 py-0.5 rounded text-sm">{children}</code>
-                        ) : (
-                          <code className={className}>{children}</code>
-                        );
-                      },
-                    }}
-                  >
-                    {readme}
-                  </ReactMarkdown>
+                <div className="prose prose-sm max-w-none dark:prose-invert">
+                  <ReactMarkdown>{readme}</ReactMarkdown>
                 </div>
               ) : (
                 <div className="text-sm text-muted-foreground">No README available</div>

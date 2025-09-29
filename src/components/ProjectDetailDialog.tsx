@@ -67,13 +67,13 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
+        <DialogHeader className="pb-4">
           <DialogTitle className="text-2xl font-bold">{project.title}</DialogTitle>
         </DialogHeader>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           {/* Project Info */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div className="flex flex-wrap gap-2 items-center">
               <Badge variant="outline">{project.category}</Badge>
               <Badge className={getStatusColor(project.status)}>{project.status}</Badge>
@@ -88,14 +88,14 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
               )}
             </div>
 
-            <p className="text-muted-foreground leading-relaxed">{project.longDescription}</p>
+            <p className="text-muted-foreground leading-relaxed text-base">{project.longDescription}</p>
 
             {/* Technologies */}
-            <div className="space-y-2">
-              <h3 className="text-sm font-semibold">Technologies</h3>
+            <div className="space-y-3">
+              <h3 className="text-base font-semibold">Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
-                  <span key={tech} className="text-xs px-3 py-1 bg-secondary text-secondary-foreground rounded-md">
+                  <span key={tech} className="text-xs px-3 py-1.5 bg-secondary text-secondary-foreground rounded-md">
                     {tech}
                   </span>
                 ))}
@@ -104,13 +104,13 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
 
             {/* Metrics */}
             {project.metrics && project.metrics.length > 0 && (
-              <div className="space-y-2">
-                <h3 className="text-sm font-semibold">Key Metrics</h3>
+              <div className="space-y-3">
+                <h3 className="text-base font-semibold">Key Metrics</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {project.metrics.map((metric) => (
-                    <div key={metric.label} className="p-3 bg-secondary rounded-lg">
-                      <div className="text-2xl font-bold text-accent">{metric.value}</div>
-                      <div className="text-xs text-muted-foreground">{metric.label}</div>
+                    <div key={metric.label} className="p-4 bg-secondary rounded-lg">
+                      <div className="text-2xl font-bold text-accent mb-1">{metric.value}</div>
+                      <div className="text-xs text-muted-foreground font-medium mb-0.5">{metric.label}</div>
                       <div className="text-xs text-muted-foreground">{metric.description}</div>
                     </div>
                   ))}
@@ -120,12 +120,12 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
 
             {/* Key Features */}
             {project.keyFeatures && project.keyFeatures.length > 0 && (
-              <div className="space-y-2">
-                <h3 className="text-sm font-semibold">Key Features</h3>
-                <ul className="space-y-1">
+              <div className="space-y-3">
+                <h3 className="text-base font-semibold">Key Features</h3>
+                <ul className="space-y-2">
                   {project.keyFeatures.map((feature, index) => (
                     <li key={index} className="text-sm text-muted-foreground flex items-start">
-                      <span className="mr-2">•</span>
+                      <span className="mr-2 mt-0.5">•</span>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -134,7 +134,7 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
             )}
 
             {/* Links */}
-            <div className="flex gap-2">
+            <div className="flex gap-3 pt-2">
               {project.links.github && (
                 <Button variant="default" size="sm" asChild>
                   <a href={project.links.github} target="_blank" rel="noopener noreferrer">
@@ -156,7 +156,7 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
 
           {/* GitHub README */}
           {project.links.github && (
-            <div className="space-y-2 border-t pt-6">
+            <div className="space-y-4 border-t pt-8">
               <h3 className="text-lg font-semibold">README</h3>
               {loading ? (
                 <div className="text-sm text-muted-foreground">Loading README...</div>

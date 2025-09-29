@@ -138,6 +138,70 @@ export const projects: Project[] = [
       { label: "Lighthouse", value: "100%", description: "Performance score" }
     ],
     date: "July 2025 - Aug 2025"
+  },
+  {
+    id: "phoneapp-acc",
+    title: "PhoneApp-ACC — Contact Management System",
+    description: "Java-based Android contact management app with MVVM architecture and SQLite database",
+    longDescription: "Comprehensive contact management and directory services application featuring clean MVVM architecture, efficient data handling with Room Database, and intuitive UI. Implements search/filter functionality, contact categorization, data export/import, and comprehensive input validation.",
+    technologies: ["Java", "Android SDK", "SQLite", "Room Database", "MVVM", "Gradle", "JUnit", "Mockito"],
+    category: "Mobile",
+    featured: false,
+    links: {
+      github: "https://github.com/IShauryaI/PhoneApp-ACC"
+    },
+    status: "Completed",
+    keyFeatures: [
+      "Contact management (add, edit, delete, organize)",
+      "Advanced search and filtering capabilities",
+      "Contact categorization and grouping",
+      "Data backup and restore functionality",
+      "Clean MVVM architecture with Unit testing"
+    ],
+    date: "2024"
+  },
+  {
+    id: "gadget-gaze",
+    title: "Gadget Gaze — Product Discovery Platform",
+    description: "Modern e-commerce platform for exploring and showcasing technology gadgets",
+    longDescription: "A modern product discovery platform built with React and TypeScript for exploring the latest technology gadgets and electronics. Features intuitive browsing interface, detailed product specifications, user reviews system, and advanced filtering capabilities. Built with Vite, Tailwind CSS, and shadcn/ui components.",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "React Hook Form"],
+    category: "Web Development",
+    featured: false,
+    links: {
+      github: "https://github.com/IShauryaI/gadget-gaze"
+    },
+    status: "Completed",
+    keyFeatures: [
+      "Product discovery and browsing",
+      "Detailed specifications and comparisons",
+      "Community-driven reviews and ratings",
+      "Advanced search and filtering",
+      "Responsive mobile and desktop design",
+      "Product wishlist management"
+    ],
+    date: "2025"
+  },
+  {
+    id: "pranachain",
+    title: "PranaChain — Healthcare AI & Blockchain",
+    description: "Patient-centered healthcare system combining AI predictions with blockchain transparency",
+    longDescription: "Healthcare data platform integrating machine learning for predictive health insights with blockchain-backed ledger for transparency and data integrity. Explores AI models for diabetes, heart disease, and chronic conditions while ensuring patient data ownership and tamper-proof logging of predictions. Research project in planning phase for University of Windsor internship.",
+    technologies: ["Python", "Machine Learning", "Blockchain", "Healthcare AI", "Jupyter Notebook"],
+    category: "Data & ML",
+    featured: false,
+    links: {
+      github: "https://github.com/IShauryaI/PranaChain"
+    },
+    status: "In Progress",
+    keyFeatures: [
+      "Predictive ML models for health risks",
+      "Blockchain-backed prediction logging",
+      "Patient data ownership and control",
+      "Transparent and auditable clinical insights",
+      "HIPAA-compliant architecture planning"
+    ],
+    date: "Sep 2025 - Dec 2025"
   }
 ];
 

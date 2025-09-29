@@ -149,23 +149,14 @@ const Skills = () => {
                   </div>
 
                   {/* Skills List */}
-                  <div className="space-y-2">
+                  <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill) => (
-                      <div key={skill.name} className="space-y-1">
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="font-medium">{skill.name}</span>
-                          <span className="text-muted-foreground text-xs">{skill.level}%</span>
-                        </div>
-                        <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
-                          <div 
-                            className="h-full bg-gradient-to-r from-accent to-primary rounded-full transition-all duration-1000 ease-out"
-                            style={{ 
-                              width: `${skill.level}%`,
-                              animationDelay: `${categoryIndex * 100}ms`
-                            }}
-                          />
-                        </div>
-                      </div>
+                      <span 
+                        key={skill.name}
+                        className="px-3 py-1.5 bg-secondary/50 hover:bg-secondary rounded-lg text-sm font-medium transition-colors"
+                      >
+                        {skill.name}
+                      </span>
                     ))}
                   </div>
                 </div>

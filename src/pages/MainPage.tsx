@@ -1,6 +1,7 @@
 import Home from "./Home";
 import About from "./About";
 import Skills from "./Skills";
+import GitHubStats from "./GitHubStats";
 import Projects from "./Projects";
 import Experience from "./Experience";
 import Contact from "./Contact";
@@ -16,6 +17,10 @@ const MainPage = () => {
         
         <section id="skills">
           <Skills />
+        </section>
+        
+        <section id="github">
+          <GitHubStats />
         </section>
         
         <section id="experience">

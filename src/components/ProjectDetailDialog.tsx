@@ -211,6 +211,19 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
                           </a>
                         );
                       },
+                      p: ({ children }) => {
+                        const text = children?.toString() || '';
+                        
+                        // Filter out malformed table lines
+                        if (text.includes('Preview | Description | |') || 
+                            text.includes('Introduction to CNNs for Object Recognition | |') ||
+                            text.includes('DDP Framework Architecture | |') ||
+                            text.includes('Experimental Results and Performance |')) {
+                          return null;
+                        }
+                        
+                        return <p>{children}</p>;
+                      },
                       table: ({ children }) => (
                         <div className="overflow-x-auto my-4">
                           <table className="min-w-full border-collapse">{children}</table>

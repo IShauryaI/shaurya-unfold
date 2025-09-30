@@ -163,7 +163,7 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
               {loading ? (
                 <div className="text-sm text-muted-foreground">Loading README...</div>
               ) : readme ? (
-                <div className="prose prose-sm max-w-none dark:prose-invert">
+                <div className="prose prose-sm max-w-none dark:prose-invert prose-table:border-collapse prose-thead:border-b prose-th:p-2 prose-th:text-left prose-td:p-2">
                   <ReactMarkdown
                     components={{
                       img: ({ src, alt }) => {
@@ -186,9 +186,24 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
                         );
                       },
                       table: ({ children }) => (
-                        <div className="overflow-x-auto">
-                          <table className="min-w-full">{children}</table>
+                        <div className="overflow-x-auto my-4">
+                          <table className="min-w-full border-collapse">{children}</table>
                         </div>
+                      ),
+                      thead: ({ children }) => (
+                        <thead className="border-b">{children}</thead>
+                      ),
+                      tbody: ({ children }) => (
+                        <tbody>{children}</tbody>
+                      ),
+                      tr: ({ children }) => (
+                        <tr className="border-b border-border/50">{children}</tr>
+                      ),
+                      th: ({ children }) => (
+                        <th className="px-4 py-2 text-left font-semibold">{children}</th>
+                      ),
+                      td: ({ children }) => (
+                        <td className="px-4 py-2">{children}</td>
                       ),
                     }}
                   >

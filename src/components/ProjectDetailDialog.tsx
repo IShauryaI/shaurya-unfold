@@ -166,6 +166,30 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
                 <div className="prose prose-sm max-w-none dark:prose-invert prose-table:border-collapse prose-thead:border-b prose-th:p-2 prose-th:text-left prose-td:p-2">
                   <ReactMarkdown
                     components={{
+                      h2: ({ children }) => {
+                        const text = children?.toString() || '';
+                        // If this is "Slide Preview" heading and project has images, show them
+                        if (text === 'Slide Preview' && project.images && project.images.length > 0) {
+                          return (
+                            <>
+                              <h2>{children}</h2>
+                              <div className="grid grid-cols-1 gap-4 my-4">
+                                {project.images.map((img, index) => (
+                                  <div key={index} className="rounded-lg overflow-hidden border border-border">
+                                    <img 
+                                      src={img} 
+                                      alt={`${project.title} - Slide ${index + 1}`}
+                                      className="w-full h-auto"
+                                      loading="lazy"
+                                    />
+                                  </div>
+                                ))}
+                              </div>
+                            </>
+                          );
+                        }
+                        return <h2>{children}</h2>;
+                      },
                       img: ({ src, alt }) => {
                         if (!src) return null;
                         

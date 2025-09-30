@@ -92,25 +92,6 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
 
             <p className="text-muted-foreground leading-relaxed text-base">{project.longDescription}</p>
 
-            {/* Presentation Slides */}
-            {project.images && project.images.length > 0 && (
-              <div className="space-y-3">
-                <h3 className="text-base font-semibold">Presentation Slides</h3>
-                <div className="grid grid-cols-1 gap-4">
-                  {project.images.map((img, index) => (
-                    <div key={index} className="rounded-lg overflow-hidden border border-border">
-                      <img 
-                        src={img} 
-                        alt={`${project.title} - Slide ${index + 1}`}
-                        className="w-full h-auto"
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {/* Technologies */}
             <div className="space-y-3">
               <h3 className="text-base font-semibold">Technologies</h3>
@@ -188,9 +169,20 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
                       img: ({ src, alt }) => {
                         if (!src) return null;
                         
-                        // Convert relative GitHub URLs to absolute raw.githubusercontent.com URLs
+                        // Map GitHub preview images to local uploaded slides for CNN seminar
+                        const imageMap: Record<string, string> = {
+                          'cnn-seminar-preview-1.png': '/lovable-uploads/cnn-seminar-slide-1.png',
+                          'cnn-seminar-preview-2.png': '/lovable-uploads/cnn-seminar-slide-2.png',
+                          'cnn-seminar-preview-3.png': '/lovable-uploads/cnn-seminar-slide-3.png'
+                        };
+                        
+                        // Check if this is one of the seminar preview images
                         let imgSrc = src;
-                        if (src.startsWith('./') || src.startsWith('../') || !src.startsWith('http')) {
+                        const fileName = src.split('/').pop() || '';
+                        if (imageMap[fileName]) {
+                          imgSrc = imageMap[fileName];
+                        } else if (src.startsWith('./') || src.startsWith('../') || !src.startsWith('http')) {
+                          // Convert relative GitHub URLs to absolute raw.githubusercontent.com URLs
                           const cleanSrc = src.replace(/^\.\//, '');
                           imgSrc = `https://raw.githubusercontent.com/${repoInfo?.owner}/${repoInfo?.repo}/main/${cleanSrc}`;
                         }

@@ -6,6 +6,7 @@ import Projects from "./Projects";
 import Experience from "./Experience";
 import Contact from "./Contact";
 import RecentHighlights from "./RecentHighlights";
+import Specializations from "./Specializations";
 
 const MainPage = () => {
   return (
@@ -26,6 +27,10 @@ const MainPage = () => {
         
         <section id="experience">
           <Experience />
+        </section>
+        
+        <section id="specializations">
+          <Specializations />
         </section>
         
         <section id="projects">

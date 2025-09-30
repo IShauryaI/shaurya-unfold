@@ -33,7 +33,7 @@ const Projects = () => {
       <div className="container-fluid py-16 md:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto space-section">
           {/* Header */}
-          <div className="text-center space-y-4 animate-fade-up">
+          <div className="text-center space-y-0 animate-fade-up">
             <h1 className="text-section">Featured Projects</h1>
             <p className="text-subtitle max-w-2xl mx-auto">
               A collection of projects showcasing my experience in web development, data science, and systems programming

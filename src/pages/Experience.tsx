@@ -60,7 +60,7 @@ const Experience = () => {
           </div>
 
           {/* Work Experience */}
-          <div className="space-y-8 animate-fade-up" style={{ animationDelay: "200ms" }}>
+          <div className="space-y-8 animate-fade-up -mt-4 md:-mt-6" style={{ animationDelay: "200ms" }}>
             <div className="flex items-center space-x-3">
               <Building className="h-6 w-6 text-accent" />
               <h2 className="text-2xl font-bold">Professional Experience</h2>

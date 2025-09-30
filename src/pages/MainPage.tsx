@@ -15,12 +15,12 @@ const MainPage = () => {
           <Home />
         </section>
         
-        <section id="skills">
-          <Skills />
-        </section>
-        
         <section id="github">
           <GitHubStats />
+        </section>
+        
+        <section id="skills">
+          <Skills />
         </section>
         
         <section id="experience">

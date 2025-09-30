@@ -15,8 +15,8 @@ const MainPage = () => {
           <Home />
         </section>
         
-        <section id="github">
-          <GitHubStats />
+        <section id="about">
+          <About />
         </section>
         
         <section id="skills">
@@ -31,8 +31,8 @@ const MainPage = () => {
           <Projects />
         </section>
         
-        <section id="about">
-          <About />
+        <section id="github">
+          <GitHubStats />
         </section>
         
         <section id="contact">

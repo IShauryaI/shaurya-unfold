@@ -17,7 +17,7 @@ const Home = () => {
         <div className="glow-orb glow-orb-2"></div>
         <div className="glow-orb glow-orb-3"></div>
         
-        <div className="container-fluid relative z-10 py-16 md:py-20 lg:py-24">
+        <div className="container-fluid relative z-10 pt-16 md:pt-20 lg:pt-24 pb-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Content */}
             <div className="space-y-8 animate-fade-up">

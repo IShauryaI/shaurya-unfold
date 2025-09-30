@@ -20,6 +20,41 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "cnn-transformers-seminar",
+    title: "CNN & Transformers for Object Recognition — Seminar",
+    description: "Visual Computing seminar on brain-inspired hybrid architectures for object detection",
+    longDescription: "Presented CNN & Transformers framework to 30+ peers, demonstrating advanced algorithm methodologies. Explored the Dynamic Dual-Processing framework combining CNN local feature extraction with Transformer global context understanding, achieving 46% fewer FLOPs than comparable models while maintaining state-of-the-art accuracy on MS COCO dataset. Analyzed bio-inspired approaches in modern computer vision systems.",
+    technologies: [
+      "Python",
+      "PyTorch",
+      "OpenCV",
+      "HuggingFace Transformers",
+      "Matplotlib",
+      "Computer Vision",
+      "Neural Architecture Search"
+    ],
+    category: "Computer Vision",
+    featured: true,
+    links: {
+      github: "https://github.com/IShauryaI/cnn-object-recognition-seminar",
+      demo: "https://github.com/IShauryaI/cnn-object-recognition-seminar/blob/main/slides/deck.pdf"
+    },
+    status: "Completed",
+    metrics: [
+      { label: "Audience", value: "30+", description: "Peers presented to" },
+      { label: "Efficiency", value: "46%", description: "Fewer FLOPs vs baseline" },
+      { label: "Framework", value: "DDP", description: "Dynamic Dual-Processing" }
+    ],
+    keyFeatures: [
+      "Hybrid CNN-Transformer architecture analysis",
+      "Brain-inspired dual-processing framework",
+      "State-of-the-art object detection performance",
+      "Computational efficiency optimization",
+      "Neural Architecture Search for feature fusion"
+    ],
+    date: "Sep 2025"
+  },
+  {
     id: "stereo-vision-3d",
     title: "3D Reconstruction from Stereo Vision",
     description: "End-to-end computer vision pipeline for metric 3D modeling",

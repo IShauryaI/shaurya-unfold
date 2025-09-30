@@ -17,7 +17,7 @@ const GitHubStats = () => {
     <section className="pt-0 pb-0 bg-gradient-subtle relative overflow-hidden">
       <div className="glow-orb glow-orb-2"></div>
       
-      <div className="container-fluid relative z-10 pt-0 pb-16 md:pb-20 lg:pb-24">
+      <div className="container-fluid relative z-10 pt-0 pb-0">
         <div className="max-w-6xl mx-auto space-section">
           {/* Header */}
           <div className="text-center space-y-4 animate-fade-up">

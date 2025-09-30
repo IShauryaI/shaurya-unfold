@@ -49,7 +49,7 @@ const Experience = () => {
 
   return (
     <section className="pt-0 pb-0 -mt-24 md:-mt-32">
-      <div className="container-fluid py-16 md:py-20 lg:py-24">
+      <div className="container-fluid pt-16 md:pt-20 lg:pt-24 pb-0">
         <div className="max-w-4xl mx-auto space-section">
           {/* Header */}
           <div className="text-center space-y-4 animate-fade-up">

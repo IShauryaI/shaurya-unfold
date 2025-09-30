@@ -185,6 +185,32 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
                           />
                         );
                       },
+                      a: ({ href, children }) => {
+                        const linkText = children?.toString() || '';
+                        
+                        // Replace PDF download link with GitHub notice
+                        if (linkText.includes('Download Full Presentation') || linkText.includes('PDF')) {
+                          return (
+                            <span className="text-muted-foreground italic">
+                              Downloadable PDF available on{' '}
+                              <a 
+                                href={project?.links.github} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-accent hover:underline"
+                              >
+                                GitHub
+                              </a>
+                            </span>
+                          );
+                        }
+                        
+                        return (
+                          <a href={href} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                            {children}
+                          </a>
+                        );
+                      },
                       table: ({ children }) => (
                         <div className="overflow-x-auto my-4">
                           <table className="min-w-full border-collapse">{children}</table>

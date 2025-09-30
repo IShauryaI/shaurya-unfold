@@ -5,6 +5,7 @@ import GitHubStats from "./GitHubStats";
 import Projects from "./Projects";
 import Experience from "./Experience";
 import Contact from "./Contact";
+import RecentHighlights from "./RecentHighlights";
 
 const MainPage = () => {
   return (
@@ -13,6 +14,10 @@ const MainPage = () => {
       <div className="relative">
         <section id="home">
           <Home />
+        </section>
+        
+        <section id="highlights">
+          <RecentHighlights />
         </section>
         
         <section id="skills">

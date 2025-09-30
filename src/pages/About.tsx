@@ -1,32 +1,4 @@
-import { Award, Code2, Target, TrendingUp } from "lucide-react";
-
 const About = () => {
-  const highlights = [
-    { 
-      label: "3D Points", 
-      value: "150k+",
-      description: "Reconstructed from stereo images",
-      icon: Award
-    },
-    { 
-      label: "Fraud Detection", 
-      value: "96%",
-      description: "ROC-AUC on 11M+ records",
-      icon: TrendingUp
-    },
-    { 
-      label: "AI Accuracy", 
-      value: "80%",
-      description: "Health recommendation system",
-      icon: Target
-    },
-    { 
-      label: "Performance", 
-      value: "100%",
-      description: "Lighthouse score achieved",
-      icon: Code2
-    }
-  ];
 
   return (
     <section className="section-padding pt-0 -mt-12 md:-mt-16">
@@ -95,33 +67,6 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Recent Highlights */}
-            <div className="animate-fade-up" style={{ animationDelay: "400ms" }}>
-              <h2 className="text-2xl font-bold mb-6 text-center">Recent Highlights</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {highlights.map((highlight, index) => (
-                  <div 
-                    key={highlight.label}
-                    className="card-elevated text-center group hover:border-accent/50"
-                    style={{ animationDelay: `${400 + (index * 100)}ms` }}
-                  >
-                    <div className="space-y-3">
-                      <div className="flex justify-center">
-                        <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
-                          <highlight.icon className="h-6 w-6 text-accent" />
-                        </div>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="text-2xl font-bold text-accent">{highlight.value}</div>
-                        <div className="text-sm font-medium">{highlight.label}</div>
-                        <div className="text-xs text-muted-foreground">{highlight.description}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           </div>

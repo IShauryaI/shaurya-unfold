@@ -15,6 +15,7 @@ interface ProjectDetailDialogProps {
 export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDetailDialogProps) => {
   const [readme, setReadme] = useState<string>("");
   const [loading, setLoading] = useState(false);
+  const [repoInfo, setRepoInfo] = useState<{ owner: string; repo: string } | null>(null);
 
   useEffect(() => {
     if (!project?.links.github || !open) return;
@@ -25,6 +26,7 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
         // Extract owner and repo from GitHub URL
         const url = new URL(project.links.github);
         const [, owner, repo] = url.pathname.split('/');
+        setRepoInfo({ owner, repo });
         
         const response = await fetch(
           `https://api.github.com/repos/${owner}/${repo}/readme`,
@@ -162,7 +164,36 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
                 <div className="text-sm text-muted-foreground">Loading README...</div>
               ) : readme ? (
                 <div className="prose prose-sm max-w-none dark:prose-invert">
-                  <ReactMarkdown>{readme}</ReactMarkdown>
+                  <ReactMarkdown
+                    components={{
+                      img: ({ src, alt }) => {
+                        if (!src) return null;
+                        
+                        // Convert relative GitHub URLs to absolute raw.githubusercontent.com URLs
+                        let imgSrc = src;
+                        if (src.startsWith('./') || src.startsWith('../') || !src.startsWith('http')) {
+                          const cleanSrc = src.replace(/^\.\//, '');
+                          imgSrc = `https://raw.githubusercontent.com/${repoInfo?.owner}/${repoInfo?.repo}/main/${cleanSrc}`;
+                        }
+                        
+                        return (
+                          <img 
+                            src={imgSrc} 
+                            alt={alt || ''} 
+                            className="rounded-lg border border-border max-w-full h-auto"
+                            loading="lazy"
+                          />
+                        );
+                      },
+                      table: ({ children }) => (
+                        <div className="overflow-x-auto">
+                          <table className="min-w-full">{children}</table>
+                        </div>
+                      ),
+                    }}
+                  >
+                    {readme}
+                  </ReactMarkdown>
                 </div>
               ) : (
                 <div className="text-sm text-muted-foreground">No README available</div>

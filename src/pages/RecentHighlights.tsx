@@ -29,7 +29,7 @@ const RecentHighlights = () => {
   ];
 
   return (
-    <section className="section-padding pt-0">
+    <section className="section-padding pt-8 pb-16 md:pb-20 lg:pb-24">
       <div className="container-fluid">
         <div className="max-w-4xl mx-auto">
           <div className="animate-fade-up">

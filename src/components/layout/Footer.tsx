@@ -21,9 +21,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-surface border-t border-border">
+    <footer className="bg-surface border-t border-border pt-0 pb-0">
       <div className="container-fluid">
-        <div className="py-12">
+        <div className="py-16 md:py-20 lg:py-24">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Contact Info */}
             <div className="space-y-4">

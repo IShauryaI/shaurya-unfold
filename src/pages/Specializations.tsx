@@ -2,8 +2,8 @@ import { Brain, Code, BarChart } from "lucide-react";
 
 const Specializations = () => {
   return (
-    <section className="section-padding pt-0">
-      <div className="container-fluid">
+    <section className="pt-0 pb-0">
+      <div className="container-fluid py-16 md:py-20 lg:py-24">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg transition-shadow">

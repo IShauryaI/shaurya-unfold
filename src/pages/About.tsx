@@ -1,8 +1,8 @@
 const About = () => {
 
   return (
-    <section className="section-padding pt-0 -mt-12 md:-mt-16">
-      <div className="container-fluid">
+    <section className="pt-0 pb-0 -mt-12 md:-mt-16">
+      <div className="container-fluid py-16 md:py-20 lg:py-24">
         <div className="max-w-4xl mx-auto space-section">
           {/* Header */}
           <div className="text-center space-y-4 animate-fade-up">

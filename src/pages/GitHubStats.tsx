@@ -14,10 +14,10 @@ const GitHubStats = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <section className="section-padding bg-gradient-subtle relative overflow-hidden">
+    <section className="pt-0 pb-0 bg-gradient-subtle relative overflow-hidden">
       <div className="glow-orb glow-orb-2"></div>
       
-      <div className="container-fluid relative z-10">
+      <div className="container-fluid relative z-10 py-16 md:py-20 lg:py-24">
         <div className="max-w-6xl mx-auto space-section">
           {/* Header */}
           <div className="text-center space-y-4 animate-fade-up">

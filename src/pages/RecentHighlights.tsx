@@ -29,8 +29,8 @@ const RecentHighlights = () => {
   ];
 
   return (
-    <section className="section-padding pt-8 pb-16 md:pb-20 lg:pb-24">
-      <div className="container-fluid">
+    <section className="pt-0 pb-0">
+      <div className="container-fluid py-16 md:py-20 lg:py-24">
         <div className="max-w-4xl mx-auto">
           <div className="animate-fade-up">
             <h2 className="text-2xl font-bold mb-6 text-center">Recent Highlights</h2>

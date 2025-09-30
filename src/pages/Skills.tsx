@@ -40,8 +40,8 @@ const Skills = () => {
   ];
 
   return (
-    <section className="section-padding bg-surface/50">
-      <div className="container-fluid">
+    <section className="pt-0 pb-0 bg-surface/50">
+      <div className="container-fluid py-16 md:py-20 lg:py-24">
         <div className="max-w-6xl mx-auto space-section">
           {/* Header */}
           <div className="text-center space-y-3 animate-fade-up mb-12">

@@ -1,7 +1,18 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
 
 const GitHubStats = () => {
+  const [refreshKey, setRefreshKey] = useState(Date.now());
+
+  useEffect(() => {
+    // Auto-refresh every 30 minutes
+    const interval = setInterval(() => {
+      setRefreshKey(Date.now());
+    }, 30 * 60 * 1000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="section-padding bg-gradient-subtle relative overflow-hidden">
       <div className="glow-orb glow-orb-2"></div>
@@ -21,7 +32,7 @@ const GitHubStats = () => {
             {/* GitHub Stats */}
             <div className="card-elevated flex items-center justify-center p-4">
               <img 
-                src={`https://github-readme-stats.vercel.app/api?username=IShauryaI&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=3b82f6&text_color=64748b&icon_color=3b82f6&cache_seconds=1800&t=${Date.now()}`}
+                src={`https://github-readme-stats.vercel.app/api?username=IShauryaI&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=3b82f6&text_color=64748b&icon_color=3b82f6&cache_seconds=1800&t=${refreshKey}`}
                 alt="GitHub Stats"
                 className="w-full h-auto"
                 loading="lazy"
@@ -31,7 +42,7 @@ const GitHubStats = () => {
             {/* GitHub Streak */}
             <div className="card-elevated flex items-center justify-center p-4">
               <img 
-                src={`https://github-readme-streak-stats.herokuapp.com/?user=IShauryaI&theme=tokyonight&hide_border=true&background=00000000&ring=3b82f6&fire=3b82f6&currStreakLabel=64748b&sideLabels=64748b&dates=64748b&t=${Date.now()}`}
+                src={`https://github-readme-streak-stats.herokuapp.com/?user=IShauryaI&theme=tokyonight&hide_border=true&background=00000000&ring=3b82f6&fire=3b82f6&currStreakLabel=64748b&sideLabels=64748b&dates=64748b&t=${refreshKey}`}
                 alt="GitHub Streak"
                 className="w-full h-auto"
                 loading="lazy"
@@ -41,7 +52,7 @@ const GitHubStats = () => {
             {/* Top Languages */}
             <div className="card-elevated flex items-center justify-center p-4">
               <img 
-                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=IShauryaI&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=3b82f6&text_color=64748b&cache_seconds=1800&t=${Date.now()}`}
+                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=IShauryaI&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=3b82f6&text_color=64748b&cache_seconds=1800&t=${refreshKey}`}
                 alt="Top Languages"
                 className="w-full h-auto"
                 loading="lazy"

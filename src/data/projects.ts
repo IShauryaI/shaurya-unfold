@@ -12,6 +12,7 @@ export interface Project {
     live?: string;
   };
   image?: string;
+  images?: string[];
   status: "Completed" | "In Progress" | "Planned";
   metrics?: { label: string; value: string; description: string }[];
   keyFeatures?: string[];
@@ -40,6 +41,11 @@ export const projects: Project[] = [
       demo: "https://github.com/IShauryaI/cnn-object-recognition-seminar/blob/main/slides/deck.pdf"
     },
     image: "/lovable-uploads/cnn-seminar-preview-1.png",
+    images: [
+      "/lovable-uploads/cnn-seminar-slide-1.png",
+      "/lovable-uploads/cnn-seminar-slide-2.png",
+      "/lovable-uploads/cnn-seminar-slide-3.png"
+    ],
     status: "Completed",
     metrics: [
       { label: "Audience", value: "30+", description: "Peers presented to" },

@@ -39,6 +39,7 @@ export const projects: Project[] = [
       github: "https://github.com/IShauryaI/cnn-object-recognition-seminar",
       demo: "https://github.com/IShauryaI/cnn-object-recognition-seminar/blob/main/slides/deck.pdf"
     },
+    image: "/lovable-uploads/cnn-seminar-preview-1.png",
     status: "Completed",
     metrics: [
       { label: "Audience", value: "30+", description: "Peers presented to" },

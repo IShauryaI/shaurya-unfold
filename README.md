@@ -1,4 +1,4 @@
-# 🚀 Shaurya Unfold — Modern Developer Portfolio & Analytics Showcase
+# 🚀 Shaurya Unfold — Modern Developer Portfolio & Analytics Showcases
 
 A high-performance, accessible, and visually stunning portfolio demonstrating modern React development expertise and advanced technical architecture. This repository enables recruiters and collaborators to evaluate real-world impact, engineering best practices, and quantifiable analytics from a live production deployment.
 

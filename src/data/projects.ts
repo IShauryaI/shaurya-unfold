@@ -244,6 +244,28 @@ export const projects: Project[] = [
       "HIPAA-compliant architecture planning"
     ],
     date: "Sep 2025 - Dec 2025"
+  },
+  {
+    id: "grocery-delivery",
+    title: "Grocery Delivery System",
+    description: "Django-based grocery delivery platform with real-time order management, secure payments, and intuitive admin controls",
+    longDescription: "Comprehensive grocery delivery platform connecting customers with local stores for seamless home delivery. Features multi-user authentication (customers, store admins, system administrators), real-time inventory management, secure payment processing via Razorpay, and automated email notifications. Built with Django and modern web technologies, offering an efficient end-to-end shopping experience from cart to delivery.",
+    technologies: ["Python", "Django", "SQLite", "Bootstrap", "Razorpay", "JavaScript", "HTML/CSS", "Docker"],
+    category: "Web Development",
+    featured: false,
+    links: {
+      github: "https://github.com/IShauryaI/grocery_delivery"
+    },
+    status: "Completed",
+    keyFeatures: [
+      "Multi-user authentication with role-based dashboards",
+      "Real-time order management and tracking",
+      "Integrated Razorpay payment gateway",
+      "Inventory management with low stock alerts",
+      "Automated email notifications",
+      "Responsive mobile-first design"
+    ],
+    date: "Mar 2023"
   }
 ];
 

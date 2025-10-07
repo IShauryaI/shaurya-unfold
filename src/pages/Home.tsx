@@ -78,7 +78,7 @@ const Home = () => {
                   </a>
                 </Button>
                 <Button variant="outline" size="sm" asChild className="px-4">
-                  <a href="https://drive.google.com/uc?export=download&id=1s9_RFndZIar2aHot2mLHnTjEic5LpYEf" target="_blank" rel="noopener noreferrer">
+                  <a href="/Resume-Shaurya-Parshad.pdf" download>
                     <Download className="mr-2 h-4 w-4" />
                     Resume
                   </a>

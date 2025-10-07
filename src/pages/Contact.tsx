@@ -192,7 +192,7 @@ const Contact = () => {
                     </a>
                   </Button>
                   <Button asChild variant="outline">
-                    <a href="https://drive.google.com/uc?export=download&id=1s9_RFndZIar2aHot2mLHnTjEic5LpYEf" target="_blank" rel="noopener noreferrer">
+                    <a href="/Resume-Shaurya-Parshad.pdf" download>
                       <Send className="mr-2 h-4 w-4" />
                       Download Resume
                     </a>

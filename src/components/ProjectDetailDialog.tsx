@@ -42,7 +42,11 @@ export const ProjectDetailDialog = ({ project, open, onOpenChange }: ProjectDeta
           setReadme(text);
         }
       } catch (error) {
-        console.error("Failed to fetch README:", error);
+        // Only log errors in development mode
+        if (import.meta.env.DEV) {
+          console.error("Failed to fetch README:", error);
+        }
+        // In production, error is silently handled - user sees "No README available"
       } finally {
         setLoading(false);
       }

@@ -4,6 +4,28 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+// Secure contact form validation schema
+const contactSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(1, "Name is required")
+    .max(100, "Name must be less than 100 characters")
+    .regex(/^[a-zA-Z\s'-]+$/, "Name can only contain letters, spaces, hyphens, and apostrophes"),
+  email: z.string()
+    .trim()
+    .email("Invalid email address")
+    .max(255, "Email must be less than 255 characters"),
+  subject: z.string()
+    .trim()
+    .max(200, "Subject must be less than 200 characters")
+    .optional(),
+  message: z.string()
+    .trim()
+    .min(10, "Message must be at least 10 characters")
+    .max(2000, "Message must be less than 2000 characters")
+});
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -56,31 +78,13 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Validation Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive"
-      });
-      setIsSubmitting(false);
-      return;
-    }
     try {
+      // Validate form data with Zod schema
+      const validatedData = contactSchema.parse(formData);
+      
       // Simulate form submission (replace with actual form handler)
       await new Promise(resolve => setTimeout(resolve, 2000));
+      
       toast({
         title: "Message Sent!",
         description: "Thank you for reaching out. I'll get back to you soon!"
@@ -94,11 +98,21 @@ const Contact = () => {
         message: ""
       });
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again or use the email link above.",
-        variant: "destructive"
-      });
+      if (error instanceof z.ZodError) {
+        // Display validation errors
+        const firstError = error.errors[0];
+        toast({
+          title: "Validation Error",
+          description: firstError.message,
+          variant: "destructive"
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again or use the email link above.",
+          variant: "destructive"
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }

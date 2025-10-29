@@ -98,8 +98,8 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden pb-6 animate-slide-down">
-            <div className="flex flex-col space-y-4">
+          <nav className="md:hidden pb-6 animate-slide-down bg-background border-t border-border">
+            <div className="flex flex-col space-y-4 pt-4">
               {navItems.map((item) => (
                 <button
                   key={item.name}

@@ -1,0 +1,4 @@
+project_id = "pzetbowphpyiqdzrrvsi"
+
+[functions.github-stats]
+verify_jwt = false

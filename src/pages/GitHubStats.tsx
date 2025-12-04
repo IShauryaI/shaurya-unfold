@@ -1,7 +1,35 @@
 import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+import { Github, Star, GitFork, Code, Flame, Calendar, Activity } from "lucide-react";
 
 const GitHubStats = () => {
+  const stats = [
+    {
+      title: "GitHub Stats",
+      items: [
+        { icon: Star, label: "Total Stars", value: "15+" },
+        { icon: GitFork, label: "Forks", value: "8+" },
+        { icon: Code, label: "Repositories", value: "20+" },
+      ]
+    },
+    {
+      title: "Contribution Streak",
+      items: [
+        { icon: Activity, label: "Total Contributions", value: "263" },
+        { icon: Flame, label: "Current Streak", value: "0 days" },
+        { icon: Calendar, label: "Longest Streak", value: "5 days" },
+      ]
+    },
+    {
+      title: "Top Languages",
+      languages: [
+        { name: "Python", percentage: 45, color: "hsl(var(--primary))" },
+        { name: "TypeScript", percentage: 25, color: "hsl(210, 100%, 50%)" },
+        { name: "JavaScript", percentage: 15, color: "hsl(45, 100%, 50%)" },
+        { name: "C++", percentage: 15, color: "hsl(280, 100%, 60%)" },
+      ]
+    }
+  ];
+
   return (
     <section className="pt-0 pb-0 bg-gradient-subtle relative overflow-hidden">
       <div className="glow-orb glow-orb-2"></div>
@@ -18,28 +46,69 @@ const GitHubStats = () => {
 
           {/* Stats Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
-            <div className="card-elevated flex items-center justify-center p-4">
-              <img 
-                src="https://github-readme-stats.vercel.app/api?username=IShauryaI&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=3b82f6&text_color=64748b&icon_color=3b82f6"
-                alt="GitHub Stats"
-                className="w-full h-auto"
-              />
+            {/* Stats Card */}
+            <div className="card-elevated p-6 space-y-4">
+              <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                <Github className="h-5 w-5 text-primary" />
+                {stats[0].title}
+              </h3>
+              <div className="space-y-3">
+                {stats[0].items.map((item, i) => (
+                  <div key={i} className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <item.icon className="h-4 w-4" />
+                      <span className="text-sm">{item.label}</span>
+                    </div>
+                    <span className="text-lg font-bold text-primary">{item.value}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="card-elevated flex items-center justify-center p-4">
-              <img 
-                src="https://github-readme-streak-stats.herokuapp.com/?user=IShauryaI&theme=tokyonight&hide_border=true&background=00000000&ring=3b82f6&fire=3b82f6&currStreakLabel=64748b&sideLabels=64748b&dates=64748b"
-                alt="GitHub Streak"
-                className="w-full h-auto"
-              />
+            {/* Streak Card */}
+            <div className="card-elevated p-6 space-y-4">
+              <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                <Flame className="h-5 w-5 text-primary" />
+                {stats[1].title}
+              </h3>
+              <div className="space-y-3">
+                {stats[1].items.map((item, i) => (
+                  <div key={i} className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <item.icon className="h-4 w-4" />
+                      <span className="text-sm">{item.label}</span>
+                    </div>
+                    <span className="text-lg font-bold text-primary">{item.value}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="card-elevated flex items-center justify-center p-4">
-              <img 
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=IShauryaI&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=3b82f6&text_color=64748b"
-                alt="Top Languages"
-                className="w-full h-auto"
-              />
+            {/* Languages Card */}
+            <div className="card-elevated p-6 space-y-4">
+              <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+                <Code className="h-5 w-5 text-primary" />
+                {stats[2].title}
+              </h3>
+              <div className="space-y-3">
+                {stats[2].languages?.map((lang, i) => (
+                  <div key={i} className="space-y-1">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">{lang.name}</span>
+                      <span className="text-foreground font-medium">{lang.percentage}%</span>
+                    </div>
+                    <div className="h-2 bg-muted rounded-full overflow-hidden">
+                      <div 
+                        className="h-full rounded-full transition-all duration-500"
+                        style={{ 
+                          width: `${lang.percentage}%`,
+                          backgroundColor: lang.color
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

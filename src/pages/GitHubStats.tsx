@@ -159,33 +159,33 @@ const GitHubStats = () => {
               </div>
             </div>
 
-            {/* Community Card */}
+            {/* Contributions Card */}
             <div className="card-elevated p-6 space-y-4">
               <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                <Users className="h-5 w-5 text-primary" />
-                Community
+                <Flame className="h-5 w-5 text-primary" />
+                Contributions
               </h3>
               <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <Flame className="h-4 w-4" />
+                    <span className="text-sm">Recent Commits</span>
+                  </div>
+                  <span className="text-lg font-bold text-primary">{stats.recent_contributions}+</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <FolderGit2 className="h-4 w-4" />
+                    <span className="text-sm">Active Repos</span>
+                  </div>
+                  <span className="text-lg font-bold text-primary">{stats.public_repos}</span>
+                </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Users className="h-4 w-4" />
                     <span className="text-sm">Followers</span>
                   </div>
                   <span className="text-lg font-bold text-primary">{stats.followers}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Users className="h-4 w-4" />
-                    <span className="text-sm">Following</span>
-                  </div>
-                  <span className="text-lg font-bold text-primary">{stats.following}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Flame className="h-4 w-4" />
-                    <span className="text-sm">Recent Activity</span>
-                  </div>
-                  <span className="text-lg font-bold text-primary">{stats.recent_contributions}+</span>
                 </div>
               </div>
             </div>

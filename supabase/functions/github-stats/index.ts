@@ -18,6 +18,12 @@ serve(async (req) => {
       throw new Error('Username is required');
     }
 
+    // Validate GitHub username format (1-39 alphanumeric characters or hyphens, cannot start/end with hyphen)
+    const usernameRegex = /^[a-zA-Z0-9](?:[a-zA-Z0-9]|-(?=[a-zA-Z0-9])){0,38}$/;
+    if (typeof username !== 'string' || !usernameRegex.test(username)) {
+      throw new Error('Invalid GitHub username format');
+    }
+
     console.log(`Fetching GitHub stats for: ${username}`);
 
     // Fetch user data

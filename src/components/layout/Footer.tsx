@@ -1,5 +1,4 @@
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
@@ -21,61 +20,44 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-surface border-t border-border pt-0 pb-0">
+    <footer className="border-t border-border/50 bg-background">
       <div className="container-fluid">
-        <div className="pt-6 pb-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Contact Info */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Get In Touch</h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <div className="flex items-center space-x-2">
-                  <MapPin className="h-4 w-4" />
-                  <span>Windsor, Ontario</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Mail className="h-4 w-4" />
-                  <a 
-                    href="mailto:shauryapd@gmail.com"
-                    className="hover:text-accent transition-colors"
-                  >
-                    shauryapd@gmail.com
-                  </a>
-                </div>
-              </div>
+        <div className="py-8 md:py-12">
+          {/* Main Footer Content */}
+          <div className="flex flex-col items-center text-center space-y-6">
+            {/* Name/Brand */}
+            <div className="space-y-2">
+              <h3 className="text-xl font-display font-semibold tracking-tight">
+                Shaurya Parshad
+              </h3>
+              <p className="text-sm text-muted-foreground max-w-md">
+                Software Developer passionate about building impactful solutions
+              </p>
             </div>
 
             {/* Social Links */}
-            <div className="space-y-4 text-center">
-              <h3 className="text-lg font-semibold">Connect</h3>
-              <div className="flex justify-center space-x-4">
-                {socialLinks.map((link) => (
-                  <Button
-                    key={link.name}
-                    variant="ghost"
-                    size="sm"
-                    asChild
-                    className="w-9 h-9 p-0"
-                  >
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={link.name}
-                    >
-                      <link.icon className="h-4 w-4" />
-                    </a>
-                  </Button>
-                ))}
-              </div>
+            <div className="flex items-center gap-1">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.name}
+                  className="p-3 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all duration-200"
+                >
+                  <link.icon className="h-5 w-5" />
+                </a>
+              ))}
             </div>
 
+            {/* Divider */}
+            <div className="w-16 h-px bg-border/60" />
+
             {/* Copyright */}
-            <div className="space-y-4 md:text-right">
-              <div className="text-sm text-muted-foreground">
-                <p>&copy; 2025 Shaurya Parshad</p>
-              </div>
-            </div>
+            <p className="text-xs text-muted-foreground/70">
+              © {new Date().getFullYear()} Shaurya Parshad. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
